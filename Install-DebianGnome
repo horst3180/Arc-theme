@@ -1,0 +1,29 @@
+clear
+echo
+#################################################################################################
+echo "Arc Theme installation script 1.0"
+echo
+echo "Version: Debian 8.0 - Jessie, Gnome 3.14"
+#################################################################################################
+
+#Removing existing old files
+  rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark} && \
+  rm -rf ~/.local/share/themes/{Arc,Arc-Darker,Arc-Dark} && \
+  rm -rf ~/.themes/{Arc,Arc-Darker,Arc-Dark}
+
+#Adding new repository and packages
+  echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/Debian_8.0/ jessie main contrib non-free' >> /etc/apt/sources.list && \
+apt-get update && \
+  apt-get install aptitude tasksel wget && \
+
+#Gnome update and package installation
+tasksel install gnome-desktop --new-install && \
+aptitude -q --without-recommends -o APT::Install-Recommends=no -y install ~t^desktop$ ~t^gnome-desktop$ && \
+  apt-get install -y gnome-themes-standard && \
+  apt-get install -y gtk2-engines-murrine
+
+#Installation
+apt-get install -y arc-theme
+
+#################################################################################################
+echo
