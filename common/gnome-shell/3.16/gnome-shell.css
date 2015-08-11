@@ -1469,7 +1469,7 @@ StScrollBar {
 
 .legacy-tray {
   background-color: rgba(37, 39, 45, 0.95);
-  border-width: 0; }
+  /*border-width: 0;*/ }
   .legacy-tray:ltr {
     border-radius: 0 2px 0 0;
     border-left-width: 0; }
