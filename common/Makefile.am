@@ -32,6 +32,33 @@ if ENABLE_CINNAMON
 		light-assets \
 		cinnamon.css \
 		$(ithemedir)/cinnamon
+
+if ENABLE_DARK
+	$(MKDIR_P) $(ithemedarkdir)/cinnamon
+
+	cd $(srcdir)/cinnamon && cp -r --no-preserve=mode,ownership \
+		common-assets \
+		dark-assets \
+                $(ithemedarkdir)/cinnamon
+
+	cd $(srcdir)/cinnamon && cp --no-preserve=mode,ownership \
+		cinnamon-dark.css \
+		$(ithemedarkdir)/cinnamon/cinnamon.css
+endif # ENABLE_DARK
+
+if ENABLE_DARKER
+	$(MKDIR_P) $(ithemedarkerdir)/cinnamon
+
+	cd $(srcdir)/cinnamon && cp -r --no-preserve=mode,ownership \
+		common-assets \
+		light-assets \
+        $(ithemedarkerdir)/cinnamon
+
+	cd $(srcdir)/cinnamon && cp --no-preserve=mode,ownership \
+		cinnamon-darker.css \
+		$(ithemedarkerdir)/cinnamon/cinnamon.css
+endif # ENABLE_DARKER
+
 endif # ENABLE_GNOME_SHELL
 
 
