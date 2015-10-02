@@ -1105,6 +1105,7 @@ StScrollBar {
   background-color: transparent;
   border: none;
   padding: 3px 0px 3px 0px;
+  background-image: url("./common-assets/dash/dash-transparent.svg");
   border-image: url("common-assets/dash/dash-left.svg") 3 3 3 3; }
   .extended.left #dash {
     border-image: url("common-assets/dash/dash-extended-left.svg") 3 3 3 3; }
