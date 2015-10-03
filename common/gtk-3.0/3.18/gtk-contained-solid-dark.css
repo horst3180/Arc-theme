@@ -21,11 +21,7 @@
   -GtkDialog-button-spacing: 4;
   -GtkDialog-action-area-border: 0;
   -GtkStatusbar-shadow-type: none;
-  outline-color: rgba(211, 218, 227, 0.3);
-  outline-style: dashed;
-  outline-offset: -3px;
-  outline-width: 1px;
-  outline-radius: 2px; }
+}
 
 /***************
  * Base States *
