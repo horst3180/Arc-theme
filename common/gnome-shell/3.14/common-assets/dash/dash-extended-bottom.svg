@@ -22,7 +22,7 @@
      id="base"
      pagecolor="#ffffff"
      bordercolor="#666666"
-     borderopacity="0"
+     borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.313708"
@@ -67,14 +67,14 @@
          height="48.000019"
          width="47"
          id="rect4749"
-         style="display:inline;opacity:0;fill:#353945;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="display:inline;opacity:0.95;fill:#353945;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
       <rect
          y="1004.3622"
          x="47"
          height="48.000019"
          width="1"
          id="rect4749-4"
-         style="display:inline;opacity:0;fill:#161a26;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="display:inline;opacity:0.81000001;fill:#161a26;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
   </g>
 </svg>
