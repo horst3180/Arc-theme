@@ -45,16 +45,6 @@ $darker_asset_suffix: if($darker=='true', '-dark', $asset_suffix);
   -GtkDialog-action-area-border: 0;
 
   -GtkStatusbar-shadow-type: none;
-
-  // We use the outline properties to signal the focus properties
-  // to the adwaita engine: using real CSS properties is faster,
-  // and we don't use any outlines for now.
-
-  outline-color: transparentize($fg_color, 0.7);
-  outline-style: dashed;
-  outline-offset: -3px;
-  outline-width: 1px;
-  outline-radius: 2px;
 }
 
 
