@@ -1434,32 +1434,47 @@ StScrollBar {
 #dash {
   font-size: 1em;
   color: $osd_fg_color;
-  background-color: transparent;
+  background-color: none;
   border: none;
-  padding: 6px 1px 6px 0px;
-  border-image: url('common-assets/dash/dash-left.svg') 3 3 3 3;
-
-  .extended.left & { border-image: url('common-assets/dash/dash-extended-left.svg') 3 3 3 3; }
-
+  padding: 3px 0px 3px 0px;
+  border-color: none;
+  
+  .extended.left & 
+  {
+    background-color: none;
+    border-color: none;
+  }
   .right &,
   &:rtl {
-    padding: 6px 0px 6px 1px;
-    border-image: url('common-assets/dash/dash-right.svg') 3 3 3 3;
+    padding: 3px 0px 3px 0px;
+    background-color: none;
+    border-color: none;
   }
-  .extended.right & { border-image: url('common-assets/dash/dash-extended-right.svg') 3 3 3 3; }
+  .extended.right & { 
+    background-color: none;
+    border-color: none;
+  	
+  }
 
   .bottom & {
-    padding: 1px 6px 0px 6px;
-    border-image: url('common-assets/dash/dash-bottom.svg') 3 3 3 3;
+    padding: 0px 3px 0px 3px;  
+    background-color: none;
+    border-color: none;
   }
-  .extended.bottom & { border-image: url('common-assets/dash/dash-extended-bottom.svg') 3 3 3 3; }
+  .extended.bottom & {  
+   background-color: none;
+   border-color: none;}
 
   .top & {
-    padding: 0px 6px 1px 6px;
-    border-image: url('common-assets/dash/dash-top.svg') 3 3 3 3;
+    padding: 0px 3px 0px 3px;
+    background-color: none;
+    border-color: none;
   }
-  .extended.top & { border-image: url('common-assets/dash/dash-extended-top.svg') 3 3 3 3; }
-
+  .extended.top & { 
+    background-color: none;
+    border-color: none; 
+  }
+  
   .placeholder {
     background-image: url("common-assets/dash/dash-placeholder.svg");
     background-size: contain;
