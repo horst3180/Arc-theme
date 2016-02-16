@@ -44,11 +44,17 @@ If your distribution is not listed, please check the requirements yourself.
 
 ### Installation
 
-**Important:** Remove all older versions of the theme from your system before you proceed any further.
+#### via curl
+```sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/horst3180/arc-theme/master/arc-theme-upgrade)"```
 
-    sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
-    rm -rf ~/.local/share/themes/{Arc,Arc-Darker,Arc-Dark}
-    rm -rf ~/.themes/{Arc,Arc-Darker,Arc-Dark}
+#### via wget
+```sudo sh -c "$(wget -O - https://raw.githubusercontent.com/horst3180/arc-theme/master/arc-theme-upgrade)"```
+
+<!--**Important:** Remove all older versions of the theme from your system before you proceed any further.-->
+
+<!--    sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}-->
+<!--    rm -rf ~/.local/share/themes/{Arc,Arc-Darker,Arc-Dark}-->
+<!--    rm -rf ~/.themes/{Arc,Arc-Darker,Arc-Dark}-->
 
 #### Packages
 
