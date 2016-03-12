@@ -21,8 +21,10 @@
   -GtkDialog-button-spacing: 4;
   -GtkDialog-action-area-border: 0;
   -GtkStatusbar-shadow-type: none;
-  outline-color: rgba(92, 97, 108, 0.3);
-  outline-style: dashed;
+/*  outline-color: rgba(92, 97, 108, 0.3);*/
+/*  outline-style: dashed;*/
+  outline-color: transparent;
+  outline-style: none;
   outline-offset: -3px;
   outline-width: 1px;
   outline-radius: 2px; }
