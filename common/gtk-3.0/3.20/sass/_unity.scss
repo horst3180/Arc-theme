@@ -57,3 +57,112 @@ UnityPanelWidget,
   background-image: linear-gradient(to bottom, $selected_bg_color);
   border-bottom: none;
 }
+
+// Unity Greeter
+.lightdm.menu {
+  background-image: none;
+  background-color: alpha(black, 0.6);
+  border-color: alpha(white, 0.2);
+  border-radius: 4px;
+  padding: 1px;
+  color: white;
+}
+
+.lightdm-combo .menu {
+  background-color: shade($bg_color, 1.08);
+  border-radius: 0px;
+  padding: 0px;
+  color: white;
+}
+
+.lightdm {
+  &.menu .menuitem {
+    *, &.check:active, &.radio:active {
+      color: white;
+    }
+  }
+  &.menubar {
+    background-image: none;
+    background-color: alpha(black, 0.5);
+  }
+}
+
+.lightdm-combo {
+  &.combobox-entry .button, .cell, .button, .entry {
+    background-image: none;
+    background-color: alpha(black, 0.3);
+    border-color: alpha(white, 0.6);
+    border-radius: 5px;
+    padding: 7px;
+    color: white;
+    text-shadow: none;
+  }
+}
+
+.lightdm {
+  &.button, &.entry {
+    background-image: none;
+    background-color: alpha(black, 0.3);
+    border-color: alpha(white, 0.6);
+    border-radius: 5px;
+    padding: 7px;
+    color: white;
+    text-shadow: none;
+  }
+  &.button, &.entry {
+    background-image: none;
+    border-image: none;
+    &:hover {
+      background-image: none;
+      border-image: none;
+    }
+    &:active {
+      background-image: none;
+      border-image: none;
+      &:focused {
+        background-image: none;
+        border-image: none;
+      }
+    }
+  }
+  &.button:focused {
+    border-color: alpha(white, 0.9);
+    border-width: 1px;
+    border-style: solid;
+    color: white;
+  }
+  &.entry {
+    &:focused {
+      border-color: alpha(white, 0.9);
+      border-width: 1px;
+      border-style: solid;
+      color: white;
+    }
+    &:selected {
+      background-color: alpha(white, 0.2);
+    }
+    &:active {
+      -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+      animation: dashentry_spinner 1s infinite linear;
+    }
+  }
+  &.option-button {
+    padding: 2px;
+    background: none;
+    border: 0;
+  }
+  &.toggle-button {
+    background: none;
+    border-width: 0;
+    &.selected {
+      background-color: alpha(black, 0.3);
+      border-width: 1px;
+    }
+  }
+}
+
+@keyframes dashentry_spinner {
+  to {
+    -gtk-icon-transform: rotate(1turn);
+  }
+}
