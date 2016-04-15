@@ -61,15 +61,15 @@ UnityPanelWidget,
 // Unity Greeter
 .lightdm.menu {
   background-image: none;
-  background-color: alpha(black, 0.6);
-  border-color: alpha(white, 0.2);
+  background-color: transparentize(black, 0.6);
+  border-color: transparentize(white, 0.2);
   border-radius: 4px;
   padding: 1px;
   color: white;
 }
 
 .lightdm-combo .menu {
-  background-color: shade($bg_color, 1.08);
+  background-color: lighten($bg_color, 8);
   border-radius: 0px;
   padding: 0px;
   color: white;
@@ -83,15 +83,15 @@ UnityPanelWidget,
   }
   &.menubar {
     background-image: none;
-    background-color: alpha(black, 0.5);
+    background-color: transparentize(black, 0.5);
   }
 }
 
 .lightdm-combo {
   &.combobox-entry .button, .cell, .button, .entry {
     background-image: none;
-    background-color: alpha(black, 0.3);
-    border-color: alpha(white, 0.6);
+    background-color: transparentize(black, 0.3);
+    border-color: transparentize(white, 0.6);
     border-radius: 5px;
     padding: 7px;
     color: white;
@@ -102,8 +102,8 @@ UnityPanelWidget,
 .lightdm {
   &.button, &.entry {
     background-image: none;
-    background-color: alpha(black, 0.3);
-    border-color: alpha(white, 0.6);
+    background-color: transparentize(black, 0.3);
+    border-color: transparentize(white, 0.6);
     border-radius: 5px;
     padding: 7px;
     color: white;
@@ -126,20 +126,20 @@ UnityPanelWidget,
     }
   }
   &.button:focused {
-    border-color: alpha(white, 0.9);
+    border-color: transparentize(white, 0.9);
     border-width: 1px;
     border-style: solid;
     color: white;
   }
   &.entry {
     &:focused {
-      border-color: alpha(white, 0.9);
+      border-color: transparentize(white, 0.9);
       border-width: 1px;
       border-style: solid;
       color: white;
     }
     &:selected {
-      background-color: alpha(white, 0.2);
+      background-color: transparentize(white, 0.2);
     }
     &:active {
       -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
@@ -155,7 +155,7 @@ UnityPanelWidget,
     background: none;
     border-width: 0;
     &.selected {
-      background-color: alpha(black, 0.3);
+      background-color: transparentize(black, 0.3);
       border-width: 1px;
     }
   }
