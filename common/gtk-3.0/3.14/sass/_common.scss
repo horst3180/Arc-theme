@@ -2697,7 +2697,7 @@ GtkVolumeButton.button { padding: 8px; }
 
     @include button(undecorated);
     background-color: transparentize($header_bg, 1);
-    border-width: transparentize($header_bg, 1);
+    border-color: transparentize($header_bg, 1);
 
     color: transparent;
     background-position: center;
@@ -2757,7 +2757,11 @@ GtkVolumeButton.button { padding: 8px; }
     color: $header_fg;
 
     &, &:hover, &:active:hover,
-    &:backdrop, &:backdrop:hover { @include button(undecorated); }
+    &:backdrop, &:backdrop:hover {
+      background-image: none;
+      background-color: transparentize($header_bg, 1);
+      border-color: transparentize($header_bg, 1);
+    }
 
     &:hover, &:backdrop:hover { @include button(header-hover); }
     &:active:hover, &:checked { @include button(header-active); }

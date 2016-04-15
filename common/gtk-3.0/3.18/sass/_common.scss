@@ -539,7 +539,8 @@ $_dot_color: $selected_bg_color;
     > .entry.warning + .entry,
     > .entry + .entry.warning { border-#{$_border}-color: if($var=='light', $warning_color, transparentize($e_border, $a)); }
 
-    > .entry.error + .entry.warning { border-#{$_border}-color: if($var=='light', $error_color, transparentize($e_border, $a));}
+    > .entry.error + .entry.warning,
+    > .entry.warning + .entry.error { border-#{$_border}-color: if($var=='light', mix($error_color, $warning_color, 50%), transparentize($e_border, $a));}
 
     @each $e_type, $e_color in ('',$selected_bg_color),
                                ('.warning', $warning_color),
@@ -554,17 +555,23 @@ $_dot_color: $selected_bg_color;
         + GtkComboBoxText > .the-button-in-the-combobox { border-#{$_border}-color: if($var=='light', $e_color, $e_border); }
       }
     }
+    > .button:active + .entry,
     > .button:checked + .entry { border-#{$_border}-color: if($var=='light', $selected_bg_color, $e_border); }
   }
   @if $button_rules=='true' {
+    $_uncolored_button: '.button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
+
     > .button + .button { border-#{$_border}-style: none; }
 
-    > .button:hover:not(:checked):not(:active):not(:only-child),
-    > .button:hover:not(:checked):not(:active) + .button:not(:checked):not(:active) { box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border; }
+    > #{$_uncolored_button}:hover:not(:only-child),
+    > #{$_uncolored_button}:hover + #{$_uncolored_button} { box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border; }
 
-    > .button:first-child:hover:not(:checked):not(:active),
-    > .button:checked + .button:not(:checked):not(:active):hover,
-    > .entry + .button:not(:checked):not(:active):hover { box-shadow: none; }
+    > #{$_uncolored_button}:first-child:hover,
+    > .button:active + #{$_uncolored_button}:hover,
+    > .button:checked + #{$_uncolored_button}:hover,
+    > .button.suggested-action + #{$_uncolored_button}:hover,
+    > .button.destructive-action + #{$_uncolored_button}:hover,
+    > .entry + #{$_uncolored_button}:hover:not(:only-child) { box-shadow: none; }
   }
 }
 
@@ -1159,17 +1166,17 @@ GtkComboBox {
   // Linking stuff
 
   // Reset buttons
-  .linked:not(.vertical):not(.path-bar) > .button,
-  .linked:not(.vertical):not(.path-bar) > .button:hover,
-  .linked:not(.vertical):not(.path-bar) > .button:active,
-  .linked:not(.vertical):not(.path-bar) > .button:checked,
-  .linked:not(.vertical):not(.path-bar) > .button:insensitive {
-    border-radius: 3px;
-    border-style: solid;
+  .linked:not(.vertical):not(.path-bar) > .button {
+    &, &:hover, &:active, &:checked, &:insensitive {
+      border-radius: 3px;
+      border-style: solid;
+    }
   }
-  .linked:not(.vertical):not(.path-bar), .linked:not(.vertical).path-bar {
-    > .button:hover:not(:checked):not(:active):not(:only-child),
-    > .button:hover:not(:checked):not(:active) + .button:not(:checked):not(:active) { box-shadow: none; }
+  .linked:not(.vertical):not(.path-bar) {
+    $_uncolored_button: '.button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
+
+    > #{$_uncolored_button}:hover:not(:only-child),
+    > #{$_uncolored_button}:hover + #{$_uncolored_button} { box-shadow: none; }
   }
 
   // special case for path-bars and stack-switchers

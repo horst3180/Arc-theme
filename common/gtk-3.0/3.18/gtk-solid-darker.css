@@ -493,8 +493,9 @@ GtkSearchEntry.entry {
 .linked:not(.vertical):not(.path-bar) > .entry + .entry.warning {
   border-left-color: #F27835; }
 
-.linked:not(.vertical):not(.path-bar) > .entry.error + .entry.warning {
-  border-left-color: #FC4138; }
+.linked:not(.vertical):not(.path-bar) > .entry.error + .entry.warning,
+.linked:not(.vertical):not(.path-bar) > .entry.warning + .entry.error {
+  border-left-color: #f75d37; }
 
 .linked:not(.vertical):not(.path-bar) > .entry + .entry:focus:not(:last-child),
 .linked:not(.vertical):not(.path-bar) > .entry + .entry:focus:last-child {
@@ -523,19 +524,23 @@ GtkSearchEntry.entry {
 .linked:not(.vertical):not(.path-bar) > .entry.error:focus:not(:only-child) + GtkComboBoxText > .the-button-in-the-combobox {
   border-left-color: #FC4138; }
 
+.linked:not(.vertical):not(.path-bar) > .button:active + .entry,
 .linked:not(.vertical):not(.path-bar) > .button:checked + .entry {
   border-left-color: #5294E2; }
 
 .linked:not(.vertical):not(.path-bar) > .button + .button {
   border-left-style: none; }
 
-.linked:not(.vertical):not(.path-bar) > .button:hover:not(:checked):not(:active):not(:only-child),
-.linked:not(.vertical):not(.path-bar) > .button:hover:not(:checked):not(:active) + .button:not(:checked):not(:active) {
+.linked:not(.vertical):not(.path-bar) > .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
+.linked:not(.vertical):not(.path-bar) > .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action) {
   box-shadow: inset 1px 0 #cfd6e6; }
 
-.linked:not(.vertical):not(.path-bar) > .button:first-child:hover:not(:checked):not(:active),
-.linked:not(.vertical):not(.path-bar) > .button:checked + .button:not(:checked):not(:active):hover,
-.linked:not(.vertical):not(.path-bar) > .entry + .button:not(:checked):not(:active):hover {
+.linked:not(.vertical):not(.path-bar) > .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):first-child:hover,
+.linked:not(.vertical):not(.path-bar) > .button:active + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.linked:not(.vertical):not(.path-bar) > .button:checked + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.linked:not(.vertical):not(.path-bar) > .button.suggested-action + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.linked:not(.vertical):not(.path-bar) > .button.destructive-action + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.linked:not(.vertical):not(.path-bar) > .entry + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child) {
   box-shadow: none; }
 
 .linked:not(.vertical).path-bar > .button + .button {
@@ -561,8 +566,9 @@ GtkSearchEntry.entry {
 .linked.vertical > .entry + .entry.warning {
   border-top-color: #F27835; }
 
-.linked.vertical > .entry.error + .entry.warning {
-  border-top-color: #FC4138; }
+.linked.vertical > .entry.error + .entry.warning,
+.linked.vertical > .entry.warning + .entry.error {
+  border-top-color: #f75d37; }
 
 .linked.vertical > .entry + .entry:focus:not(:last-child),
 .linked.vertical > .entry + .entry:focus:last-child {
@@ -591,19 +597,23 @@ GtkSearchEntry.entry {
 .linked.vertical > .entry.error:focus:not(:only-child) + GtkComboBoxText > .the-button-in-the-combobox {
   border-top-color: #FC4138; }
 
+.linked.vertical > .button:active + .entry,
 .linked.vertical > .button:checked + .entry {
   border-top-color: #5294E2; }
 
 .linked.vertical > .button + .button {
   border-top-style: none; }
 
-.linked.vertical > .button:hover:not(:checked):not(:active):not(:only-child),
-.linked.vertical > .button:hover:not(:checked):not(:active) + .button:not(:checked):not(:active) {
+.linked.vertical > .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
+.linked.vertical > .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action) {
   box-shadow: inset 0 1px #cfd6e6; }
 
-.linked.vertical > .button:first-child:hover:not(:checked):not(:active),
-.linked.vertical > .button:checked + .button:not(:checked):not(:active):hover,
-.linked.vertical > .entry + .button:not(:checked):not(:active):hover {
+.linked.vertical > .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):first-child:hover,
+.linked.vertical > .button:active + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.linked.vertical > .button:checked + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.linked.vertical > .button.suggested-action + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.linked.vertical > .button.destructive-action + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover,
+.linked.vertical > .entry + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child) {
   box-shadow: none; }
 
 .inline-toolbar.toolbar GtkToolButton > .button.flat, .inline-toolbar GtkToolButton > .button.flat, .inline-toolbar.toolbar GtkToolButton > .sidebar-button.button, .inline-toolbar GtkToolButton > .sidebar-button.button, .linked:not(.vertical) > .entry,
@@ -1042,7 +1052,7 @@ GtkComboBox {
   border-radius: 3px;
   border-style: solid; }
 
-.primary-toolbar .linked:not(.vertical):not(.path-bar) > .button:hover:not(:checked):not(:active):not(:only-child), .header-bar .linked:not(.vertical):not(.path-bar) > .button:hover:not(:checked):not(:active):not(:only-child), .primary-toolbar .linked:not(.vertical):not(.path-bar) > .button:hover:not(:checked):not(:active) + .button:not(:checked):not(:active), .header-bar .linked:not(.vertical):not(.path-bar) > .button:hover:not(:checked):not(:active) + .button:not(:checked):not(:active), .primary-toolbar .linked:not(.vertical).path-bar > .button:hover:not(:checked):not(:active):not(:only-child), .header-bar .linked:not(.vertical).path-bar > .button:hover:not(:checked):not(:active):not(:only-child), .primary-toolbar .linked:not(.vertical).path-bar > .button:hover:not(:checked):not(:active) + .button:not(:checked):not(:active), .header-bar .linked:not(.vertical).path-bar > .button:hover:not(:checked):not(:active) + .button:not(:checked):not(:active) {
+.primary-toolbar .linked:not(.vertical):not(.path-bar) > .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child), .header-bar .linked:not(.vertical):not(.path-bar) > .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child), .primary-toolbar .linked:not(.vertical):not(.path-bar) > .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action), .header-bar .linked:not(.vertical):not(.path-bar) > .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + .button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action) {
   box-shadow: none; }
 
 .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > .button, .header-bar .linked:not(.vertical):not(.path-bar).stack-switcher > .button, .primary-toolbar .linked:not(.vertical).path-bar > .button, .header-bar .linked:not(.vertical).path-bar > .button {
@@ -1081,7 +1091,7 @@ GtkComboBox {
 .primary-toolbar .linked:not(.vertical):not(.path-bar) > .entry.warning + .entry, .header-bar .linked:not(.vertical):not(.path-bar) > .entry.warning + .entry, .primary-toolbar .linked:not(.vertical):not(.path-bar) > .entry + .entry.warning, .header-bar .linked:not(.vertical):not(.path-bar) > .entry + .entry.warning {
   border-left-color: rgba(21, 23, 28, 0); }
 
-.primary-toolbar .linked:not(.vertical):not(.path-bar) > .entry.error + .entry.warning, .header-bar .linked:not(.vertical):not(.path-bar) > .entry.error + .entry.warning {
+.primary-toolbar .linked:not(.vertical):not(.path-bar) > .entry.error + .entry.warning, .header-bar .linked:not(.vertical):not(.path-bar) > .entry.error + .entry.warning, .primary-toolbar .linked:not(.vertical):not(.path-bar) > .entry.warning + .entry.error, .header-bar .linked:not(.vertical):not(.path-bar) > .entry.warning + .entry.error {
   border-left-color: rgba(21, 23, 28, 0); }
 
 .primary-toolbar .linked:not(.vertical):not(.path-bar) > .entry + .entry:focus:not(:last-child), .header-bar .linked:not(.vertical):not(.path-bar) > .entry + .entry:focus:not(:last-child), .primary-toolbar .linked:not(.vertical):not(.path-bar) > .entry + .entry:focus:last-child, .header-bar .linked:not(.vertical):not(.path-bar) > .entry + .entry:focus:last-child {
@@ -1102,7 +1112,7 @@ GtkComboBox {
 .primary-toolbar .linked:not(.vertical):not(.path-bar) > .entry.error:focus:not(:only-child) + .entry, .header-bar .linked:not(.vertical):not(.path-bar) > .entry.error:focus:not(:only-child) + .entry, .primary-toolbar .linked:not(.vertical):not(.path-bar) > .entry.error:focus:not(:only-child) + .button, .header-bar .linked:not(.vertical):not(.path-bar) > .entry.error:focus:not(:only-child) + .button, .primary-toolbar .linked:not(.vertical):not(.path-bar) > .entry.error:focus:not(:only-child) + GtkComboBox > .the-button-in-the-combobox, .header-bar .linked:not(.vertical):not(.path-bar) > .entry.error:focus:not(:only-child) + GtkComboBox > .the-button-in-the-combobox, .primary-toolbar .linked:not(.vertical):not(.path-bar) > .entry.error:focus:not(:only-child) + GtkComboBoxText > .the-button-in-the-combobox, .header-bar .linked:not(.vertical):not(.path-bar) > .entry.error:focus:not(:only-child) + GtkComboBoxText > .the-button-in-the-combobox {
   border-left-color: rgba(21, 23, 28, 0.4); }
 
-.primary-toolbar .linked:not(.vertical):not(.path-bar) > .button:checked + .entry, .header-bar .linked:not(.vertical):not(.path-bar) > .button:checked + .entry {
+.primary-toolbar .linked:not(.vertical):not(.path-bar) > .button:active + .entry, .header-bar .linked:not(.vertical):not(.path-bar) > .button:active + .entry, .primary-toolbar .linked:not(.vertical):not(.path-bar) > .button:checked + .entry, .header-bar .linked:not(.vertical):not(.path-bar) > .button:checked + .entry {
   border-left-color: rgba(21, 23, 28, 0.4); }
 
 .primary-toolbar .button.suggested-action, .header-bar .button.suggested-action {
