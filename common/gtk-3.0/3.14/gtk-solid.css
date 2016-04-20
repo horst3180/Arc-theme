@@ -3260,19 +3260,27 @@ UnityPanelWidget,
   color: white; }
 
 .lightdm-combo .menu {
-  background-color: white;
+  background-color: #fdfdfe;
   border-radius: 0px;
   padding: 0px;
   color: white; }
 
-.lightdm.menu .menuitem *, .lightdm.menu .menuitem.check:active, .lightdm.menu .menuitem.radio:active {
+.lightdm.menu .menuitem *,
+.lightdm.menu .menuitem.check:active,
+.lightdm.menu .menuitem.radio:active {
   color: white; }
 
 .lightdm.menubar {
+  color: white;
   background-image: none;
   background-color: rgba(0, 0, 0, 0.5); }
 
-.lightdm-combo.combobox-entry .button, .lightdm-combo .cell, .lightdm-combo .button, .lightdm-combo .entry {
+.lightdm-combo.combobox-entry .button,
+.lightdm-combo .cell,
+.lightdm-combo .button,
+.lightdm-combo .entry,
+.lightdm.button,
+.lightdm.entry {
   background-image: none;
   background-color: rgba(0, 0, 0, 0.7);
   border-color: rgba(255, 255, 255, 0.4);
@@ -3281,34 +3289,18 @@ UnityPanelWidget,
   color: white;
   text-shadow: none; }
 
-.lightdm.button, .lightdm.entry {
-  background-image: none;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-color: rgba(255, 255, 255, 0.4);
-  border-radius: 5px;
-  padding: 7px;
-  color: white;
-  text-shadow: none; }
-
-.lightdm.button, .lightdm.entry {
+.lightdm.button,
+.lightdm.button:hover,
+.lightdm.button:active,
+.lightdm.button:active:focused,
+.lightdm.entry,
+.lightdm.entry:hover,
+.lightdm.entry:active,
+.lightdm.entry:active:focused {
   background-image: none;
   border-image: none; }
-  .lightdm.button:hover, .lightdm.entry:hover {
-    background-image: none;
-    border-image: none; }
-  .lightdm.button:active, .lightdm.entry:active {
-    background-image: none;
-    border-image: none; }
-    .lightdm.button:active:focused, .lightdm.entry:active:focused {
-      background-image: none;
-      border-image: none; }
 
-.lightdm.button:focused {
-  border-color: rgba(255, 255, 255, 0.1);
-  border-width: 1px;
-  border-style: solid;
-  color: white; }
-
+.lightdm.button:focused,
 .lightdm.entry:focused {
   border-color: rgba(255, 255, 255, 0.1);
   border-width: 1px;

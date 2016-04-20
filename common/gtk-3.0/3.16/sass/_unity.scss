@@ -69,95 +69,81 @@ UnityPanelWidget,
 }
 
 .lightdm-combo .menu {
-  background-color: lighten($bg_color, 8);
+  background-color: lighten($header_bg, 8);
   border-radius: 0px;
   padding: 0px;
   color: white;
 }
 
-.lightdm {
-  &.menu .menuitem {
-    *, &.check:active, &.radio:active {
-      color: white;
-    }
-  }
-  &.menubar {
-    background-image: none;
-    background-color: transparentize(black, 0.5);
-  }
+.lightdm.menu .menuitem *,
+.lightdm.menu .menuitem.check:active,
+.lightdm.menu .menuitem.radio:active {
+  color: white;
 }
 
-.lightdm-combo {
-  &.combobox-entry .button, .cell, .button, .entry {
-    background-image: none;
-    background-color: transparentize(black, 0.3);
-    border-color: transparentize(white, 0.6);
-    border-radius: 5px;
-    padding: 7px;
-    color: white;
-    text-shadow: none;
-  }
+.lightdm.menubar {
+  color: white;
+  background-image: none;
+  background-color: transparentize(black, 0.5);
 }
 
-.lightdm {
-  &.button, &.entry {
-    background-image: none;
+.lightdm-combo.combobox-entry .button,
+.lightdm-combo .cell,
+.lightdm-combo .button,
+.lightdm-combo .entry,
+.lightdm.button,
+.lightdm.entry {
+  background-image: none;
+  background-color: transparentize(black, 0.3);
+  border-color: transparentize(white, 0.6);
+  border-radius: 5px;
+  padding: 7px;
+  color: white;
+  text-shadow: none;
+}
+
+.lightdm.button,
+.lightdm.button:hover,
+.lightdm.button:active,
+.lightdm.button:active:focused,
+.lightdm.entry,
+.lightdm.entry:hover,
+.lightdm.entry:active,
+.lightdm.entry:active:focused {
+  background-image: none;
+  border-image: none;
+}
+
+.lightdm.button:focused,
+.lightdm.entry:focused {
+  border-color: transparentize(white, 0.9);
+  border-width: 1px;
+  border-style: solid;
+  color: white;
+}
+
+.lightdm.entry:selected {
+  background-color: transparentize(white, 0.2);
+}
+
+.lightdm.entry:active {
+  -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+  animation: dashentry_spinner 1s infinite linear;
+}
+
+.lightdm.option-button {
+  padding: 2px;
+  background: none;
+  border: 0;
+}
+
+.lightdm.toggle-button {
+  background: none;
+  border-width: 0;
+
+  &.selected {
     background-color: transparentize(black, 0.3);
-    border-color: transparentize(white, 0.6);
-    border-radius: 5px;
-    padding: 7px;
-    color: white;
-    text-shadow: none;
-  }
-  &.button, &.entry {
-    background-image: none;
-    border-image: none;
-    &:hover {
-      background-image: none;
-      border-image: none;
-    }
-    &:active {
-      background-image: none;
-      border-image: none;
-      &:focused {
-        background-image: none;
-        border-image: none;
-      }
-    }
-  }
-  &.button:focused {
-    border-color: transparentize(white, 0.9);
     border-width: 1px;
-    border-style: solid;
-    color: white;
-  }
-  &.entry {
-    &:focused {
-      border-color: transparentize(white, 0.9);
-      border-width: 1px;
-      border-style: solid;
-      color: white;
-    }
-    &:selected {
-      background-color: transparentize(white, 0.2);
-    }
-    &:active {
-      -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
-      animation: dashentry_spinner 1s infinite linear;
-    }
-  }
-  &.option-button {
-    padding: 2px;
-    background: none;
-    border: 0;
-  }
-  &.toggle-button {
-    background: none;
-    border-width: 0;
-    &.selected {
-      background-color: transparentize(black, 0.3);
-      border-width: 1px;
-    }
   }
 }
 
