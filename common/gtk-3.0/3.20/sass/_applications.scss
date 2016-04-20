@@ -139,47 +139,39 @@ $disk_space_free: darken($bg_color, 3%);
 //
 .nemo-desktop.nemo-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
 
-//NemoWindow {
-//
-//  EelEditableLabel { transition: none; }  // Workaround for invisible text in rename entry
-//
-//  .sidebar .frame { border-width: 0; }
-//
-//  separator.horizontal { color: $borders_color; }
-//
-//  .primary-toolbar NemoPathBar.linked:not(.vertical):not(.path-bar) > button {
-//
-//    @include button(header-hover);
-//
-//    &:hover { background-color: lighten($header_button_bg, 15%); }
-//    &:active, &:checked { @include button(header-active); }
-//    &:disabled { color: transparentize($header_fg, 0.4); }
-//  }
-//
-//  .primary-toolbar NemoPathBar.linked:not(.vertical):not(.path-bar) > button,
-//  .primary-toolbar NemoPathBar.linked:not(.vertical):not(.path-bar) > button:hover,
-//  .primary-toolbar NemoPathBar.linked:not(.vertical):not(.path-bar) > button:active,
-//  .primary-toolbar NemoPathBar.linked:not(.vertical):not(.path-bar) > button:checked,
-//  .primary-toolbar NemoPathBar.linked:not(.vertical):not(.path-bar) > button:disabled {
-//    @extend %linked;
-//    @extend %linked_button;
-//  }
-//
-//  .primary-toolbar NemoPathBar.linked:not(.vertical):not(.path-bar) {
-//
-//    $_linked_separator_color: $header_button_border;
-//
-//    > button:hover:not(:checked):not(:active):not(:only-child) {
-//
-//        &:hover {
-//          box-shadow: inset  1px 0 $_linked_separator_color,
-//                      inset -1px 0 $_linked_separator_color;
-//        }
-//        &:first-child:hover { box-shadow: inset -1px 0 $_linked_separator_color; }
-//        &:last-child:hover { box-shadow: inset 1px 0 $_linked_separator_color; }
-//    }
-//  }
-//}
+.nemo-window {
+
+  .nemo-places-sidebar.frame { border-width: 0; }
+  notebook { background-color: $base_color; }
+
+  // Rename entry
+  .nemo-window-pane widget.entry {
+    border: 1px solid;
+    border-radius: 3px;
+
+    @include entry(focus);
+
+    &:selected { &:focus, & { @extend %selected_items; }}
+  }
+
+  // Pathbar
+  .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) {
+
+    > button {
+      &:not(:last-child):not(:only-child) { margin: 0 0 1px 0; }
+
+      @include button(header-hover);
+
+      &:hover { background-color: lighten($header_button_bg, 15%); }
+      &:active, &:checked { @include button(header-active); }
+      &:disabled { color: transparentize($header_fg, 0.4); }
+
+      &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
+    }
+
+    @include pathbar_linking_rules($sep_color:$header_button_border);
+  }
+}
 
 //
 // Gedit

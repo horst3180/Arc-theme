@@ -1,12 +1,14 @@
-//NemoWindow GtkEventBox { background-color: $bg_color; } // fixes nemo statusbar
+//.nemo-window GtkEventBox { background-color: $bg_color; } // fixes nemo statusbar
 
-//NemoWindow,
+//.nemo-window,
 .nautilus-window {
   paned > separator {
     background-image: linear-gradient(to top, $dark_sidebar_border);
 
-    &:dir(ltr) { margin-left: -1px; }
-    &:dir(rtl) { margin-right: -1px; }
+    @if $variant=='light' {
+      &:dir(ltr) { margin-left: -1px; }
+      &:dir(rtl) { margin-right: -1px; }
+    }
   }
 }
 
@@ -75,40 +77,32 @@ filechooser,
   &.maximized placessidebar.sidebar { background-color: opacify($dark_sidebar_bg, 1); }
 }
 
+.nemo-window {
+  .sidebar {
+    color: $dark_sidebar_fg;
+    background-color: $dark_sidebar_bg;
 
-//NemoWindow,
-//MarlinViewWindow {
-//
-//  &.csd.background,
-//  .source-list, .source-list.view, .source-list.view:hover { background-color: transparent; }
-//
-//  .sidebar, .source-list.sidebar.view {
-//    background-color: $dark_sidebar_bg;
-//
-//    .view, row {
-//      background-color: transparent;
-//      color: $dark_sidebar_fg;
-//
-//      &.cell:selected {
-//        background-color: $selected_bg_color;
-//        color: $selected_fg_color;
-//      }
-//    }
-//
-//    &.frame {
-//      color: $dark_sidebar_fg;
-//    }
-//
-//    separator { color: transparent; }
-//
-//    scrollbar { @extend %dark_sidebar_scrollbar }
-//  }
-//  &.maximized .sidebar { background-color: opacify($dark_sidebar_bg, 1); }
-//
-//}
+    .view, row {
+      background-color: transparent;
+      color: $dark_sidebar_fg;
 
-//NemoWindow.background > GtkGrid > paned > separator,
-//MarlinViewWindow.background > GtkBox > paned > separator { background-color: $dark_sidebar_border }
+      &.cell:selected {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+      }
+
+      &.expander {
+        color: mix($dark_sidebar_fg, $dark_sidebar_bg, 50%);
+
+        &:hover { color: $dark_sidebar_fg; }
+      }
+    }
+
+    separator { background-color: transparent; }
+
+    scrollbar { @extend %dark_sidebar_scrollbar }
+  }
+}
 
 filechooser {
 

@@ -1859,7 +1859,8 @@ notebook {
 //
 $_scrollbar_bg_color: darken($base_color, 1%);
 
-scrollbar {
+scrollbar,
+.scrollbar {
   @at-root * {
     -GtkScrollbar-has-backward-stepper: false;
     -GtkScrollbar-has-forward-stepper: false;
@@ -1920,7 +1921,8 @@ scrollbar {
   }
 
   // slider coloring
-  slider {
+  slider,
+  .slider {
     background-color: mix($fg_color, $bg_color, 40%);
 
     &:hover { background-color: mix($fg_color, $bg_color, 30%); }
@@ -1933,7 +1935,8 @@ scrollbar {
   }
 
   // sizing
-  slider {
+  slider,
+  .slider {
     border-radius: 100px;
     margin: $_slider_margin;
   }
@@ -1964,7 +1967,8 @@ scrollbar {
       margin: $_slider_fine_tune_margin;
     }
 
-    slider {
+    slider,
+    .slider {
       min-height: 6px;
       min-width: 42px;
       margin-top: $_slider_margin;
@@ -2035,6 +2039,7 @@ switch {
                   (':indeterminate:disabled', '-mixed-insensitive'),
                   (':checked', '-checked'),
                   (':checked:disabled','-checked-insensitive') {
+    .#{$w}#{$s},
     #{$w}#{$s},
     treeview.#{$w}#{$s} {
       -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}#{$asset_suffix}.png"),
