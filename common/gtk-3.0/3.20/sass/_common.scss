@@ -2039,6 +2039,7 @@ switch {
                   (':indeterminate:disabled', '-mixed-insensitive'),
                   (':checked', '-checked'),
                   (':checked:disabled','-checked-insensitive') {
+    .#{$w}#{$s},
     #{$w}#{$s},
     treeview.#{$w}#{$s} {
       -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}#{$asset_suffix}.png"),
