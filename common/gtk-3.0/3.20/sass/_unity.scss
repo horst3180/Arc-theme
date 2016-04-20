@@ -82,6 +82,7 @@ UnityPanelWidget,
 }
 
 .lightdm.menubar {
+  color: white;
   background-image: none;
   background-color: transparentize(black, 0.5);
 }
@@ -93,7 +94,7 @@ UnityPanelWidget,
 .lightdm.button,
 .lightdm.entry {
   background-image: none;
-  background-color: transparentize(black, 0.3);
+  background-color: transparentize(black, 0.7);
   border-color: transparentize(white, 0.6);
   border-radius: 5px;
   padding: 7px;

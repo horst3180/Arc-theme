@@ -3158,7 +3158,7 @@ UnityPanelWidget,
 .lightdm.button,
 .lightdm.entry {
   background-image: none;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
   border-color: rgba(255, 255, 255, 0.4);
   border-radius: 5px;
   padding: 7px;
