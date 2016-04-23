@@ -82,9 +82,13 @@ UnityPanelWidget,
 }
 
 .lightdm.menubar {
-  color: white;
+  color: transparentize(white, 0.2);
   background-image: none;
   background-color: transparentize(black, 0.5);
+
+  & > .menuitem {
+    padding: 2px 6px;
+  }
 }
 
 .lightdm-combo.combobox-entry .button,
@@ -96,7 +100,7 @@ UnityPanelWidget,
   background-image: none;
   background-color: transparentize(black, 0.7);
   border-color: transparentize(white, 0.6);
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 7px;
   color: white;
   text-shadow: none;

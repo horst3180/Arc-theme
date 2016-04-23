@@ -3577,9 +3577,11 @@ UnityPanelWidget,
   color: white; }
 
 .lightdm.menubar {
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   background-image: none;
   background-color: rgba(0, 0, 0, 0.5); }
+  .lightdm.menubar > .menuitem {
+    padding: 2px 6px; }
 
 .lightdm-combo.combobox-entry .button,
 .lightdm-combo .cell,
@@ -3590,7 +3592,7 @@ UnityPanelWidget,
   background-image: none;
   background-color: rgba(0, 0, 0, 0.3);
   border-color: rgba(255, 255, 255, 0.4);
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 7px;
   color: white;
   text-shadow: none; }
