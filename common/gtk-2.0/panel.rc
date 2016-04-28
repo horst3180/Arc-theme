@@ -1,10 +1,11 @@
 style "theme-panel" {
 
+  xthickness = 2
   ythickness = 0
 
   bg[NORMAL] = "#2B2E37"
-  bg[ACTIVE] = @selected_bg_color
-  bg[PRELIGHT] = shade(1.1, @selected_bg_color)
+  bg[ACTIVE] = shade(1.45, "#2B2E37")
+  bg[PRELIGHT] = shade(0.9, @selected_bg_color)
   bg[SELECTED] = @selected_bg_color
 
   fg[NORMAL] = "#BAC3CF"
@@ -26,7 +27,6 @@ style "theme-panel" {
     gradient_shades = {1.0,1.0,1.0,1.0}
     textstyle = 0
     contrast = 0.0
-    textstyle = 0
   }
 }
 
@@ -93,6 +93,31 @@ style "workspace-switcher" = "theme-panel" {
   bg[SELECTED] = @selected_bg_color
 }
 
+style "window-buttons" = "theme-panel"
+{
+  xthickness = 3
+  ythickness = 3
+
+  bg[ACTIVE] = shade(0.75, @selected_bg_color)
+  bg[PRELIGHT] = shade(0.9, @selected_bg_color)
+  bg[SELECTED] = @selected_bg_color
+
+  fg[NORMAL] = shade(0.7, @base_color)
+  fg[ACTIVE] = @base_color
+  fg[PRELIGHT] = @base_color
+
+  engine "murrine" {
+    reliefstyle = 0
+    glazestyle = 0
+    glow_shade = 1.0
+    highlight_shade = 1.0
+    roundness = 0
+    gradient_shades = {1.0,1.0,1.0,1.0}
+    textstyle = 0
+    contrast = 0.0
+  }
+}
+
 style "indicator" = "theme-panel" {
   xthickness = 0
   ythickness = 0
@@ -151,3 +176,4 @@ widget "*PanelApplet*"                                style "theme-panel-text"
 # Override general panel-style with specific plugin-styles
 widget "*indicator-applet*"                           style "indicator"
 widget "*indicator-button*"                           style "indicator"
+widget "*XfceTasklist*"                               style "window-buttons"
