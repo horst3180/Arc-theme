@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Arc dark chrome theme",
+    "description": "The title of the application, displayed in the web store."
+  },
+  "appDesc": {
+    "message": "A Google Chrome theme made to match the colors of the dark arc theme by horst3180", 
+    "description":"The description of the application, displayed in the web store."
+  }
+}
