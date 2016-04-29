@@ -18,3 +18,10 @@
 - [ ] I read the list above.
 - [ ] I read the README.
 - [ ] I've checked if my issue isn't duplicated.
+
+**And complete this:**
+
+- Distribution:
+- Desktop environment:
+- GTK+ 3 version:
+- GNOME Shell version (if using):
