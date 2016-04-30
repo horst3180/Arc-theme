@@ -32,4 +32,4 @@
 - Distribution:
 - Desktop environment:
 - GTK+ 3 version:
-- Arc version (commit): ``
+- Arc version (commit):
