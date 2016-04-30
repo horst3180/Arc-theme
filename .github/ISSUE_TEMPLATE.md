@@ -1,6 +1,6 @@
-**Please read this before posting, this list was created for avoiding duplicated issues.**
+### Please read this before posting
 
-**If yours isn't listed here, delete this and continue.**
+**This list was created for avoiding duplicated issues, if yours isn't listed here, delete this and continue.**
 
 - The theme doesn't works in [distro] that have a GTK+ 3 version lower than 3.14 (i.e. Linux Mint 17.x).
   - Arc *only supports versions higher or equal than* 3.14.
