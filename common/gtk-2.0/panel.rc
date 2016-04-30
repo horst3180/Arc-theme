@@ -102,10 +102,6 @@ style "window-buttons" = "theme-panel"
   bg[PRELIGHT] = shade(0.9, @selected_bg_color)
   bg[SELECTED] = @selected_bg_color
 
-  fg[NORMAL] = shade(0.7, @base_color)
-  fg[ACTIVE] = @base_color
-  fg[PRELIGHT] = @base_color
-
   engine "murrine" {
     reliefstyle = 0
     glazestyle = 0
