@@ -4,7 +4,7 @@
 
 - The theme doesn't works in [distro] that have a GTK+ 3 version lower than 3.14 (i.e. Linux Mint 17.x).
   - Arc *only supports versions higher or equal than* 3.14.
-- The theme is broken after a major GTK+ 3 update (i.e. 3.18 -> 3.20).
+- The theme is broken after a major GTK+ 3 update (i.e. 3.18 :point_right: 3.20).
   - Update the package or install from sources.
 - The theme is broken after installing from a repository.
   - Check if the repository that you're using is *specifically* for the distribution (and distribution/GTK version) that you're using.
@@ -12,20 +12,20 @@
   - Possibly a bug on GTK+ 3 version checking, use `--with-gnome=<version>` flag with `./autogen.sh`.
 - Theme isn't transparent on GNOME applications without CSD (i.e. Ubuntu's patched Nautilus).
   - Transparency on GTK+ 3 themes *isn't supported* for non-CSD applications.
-- Theme does not build from AUR in Arch/Manjaro and others.
+- Theme doesn't build from AUR in Arch/Manjaro and others.
   - Ensure you have the `base-devel` group installed.
-- Using XFCE, the notifications looks ugly or are always full.
-  - Please check if Arc is the theme selected on the Notifications configuration.
-- GTK 2 theme looks like Windows 95 and LibreOffice/others looks ugly.
-  - Check if you have the Murrine GTK engine and `gnome-themes-standard` installed.
-- My GTK apps have a transparent background in Ubuntu.
+- Some GTK+ 3 applications have a transparent background in Ubuntu.
   - Run this in terminal: `gsettings set com.canonical.desktop.interface scrollbar-mode normal`.
+- Using XFCE, the notifications looks always full.
+  - This is already fixed, check if your Arc version is the lastest.
+- GTK+ 2 theme looks like Windows 95 and LibreOffice/others looks ugly.
+  - Check if you have the Murrine GTK engine and `gnome-themes-standard` installed.
 
 ----
 
 - [ ] I read the list above.
 - [ ] I read the README.
-- [ ] I've checked if my issue isn't duplicated.
+- [ ] I checked if my issue isn't duplicated.
 
 **Details:**
 
