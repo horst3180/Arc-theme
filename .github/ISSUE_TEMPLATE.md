@@ -2,7 +2,7 @@
 
 **This list was created for avoiding duplicated issues, if yours isn't listed, delete and continue.**
 
-- The theme doesn't works in [distro] that have a GTK+ 3 version lower than 3.14 (i.e. Linux Mint 17.x).
+- The theme doesn't work in [distro] that have a GTK+ 3 version lower than 3.14 (i.e. Linux Mint 17.x).
   - Arc *only supports versions higher or equal than* 3.14.
 - The theme is broken after a major GTK+ 3 update (i.e. 3.18 :point_right: 3.20).
   - Update the package or install from sources.
@@ -16,8 +16,6 @@
   - Ensure you have the `base-devel` group installed.
 - Some GTK+ 3 applications have a transparent background in Ubuntu.
   - Run this in terminal: `gsettings set com.canonical.desktop.interface scrollbar-mode normal`.
-- Using XFCE, the notifications looks always full.
-  - This is already fixed, check if your Arc version is the lastest.
 - GTK+ 2 theme looks like Windows 95 and LibreOffice/others looks ugly.
   - Check if you have the Murrine GTK engine and `gnome-themes-standard` installed.
 
