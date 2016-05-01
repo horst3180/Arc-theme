@@ -12,6 +12,8 @@
   - Check if you have the Murrine GTK engine and `gnome-themes-standard` installed.
 - My GTK apps have a transparent background in Ubuntu.
   - Run this in terminal: `gsettings set com.canonical.desktop.interface scrollbar-mode normal`.
+- On Arch Linux the AUR package won't build [[gtk-theme-arc-git](https://aur.archlinux.org/packages/gtk-theme-arc-git/)/[gtk-theme-arc](https://aur.archlinux.org/packages/gtk-theme-arc/)]
+  - Ensure you have the "[base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)" package installed before you build packages from AUR.
 
 **Mark those:**
 
