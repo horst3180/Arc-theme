@@ -1,0 +1,152 @@
+! Port of Arc theme for Openbox (Steambox) =====================================
+!
+! https://github.com/garnetius/steambox
+! https://github.com/horst3180/Arc-theme
+!
+! Common -----------------------------------------------------------------------
+
+*.font: shadow=n
+*.justify: center
+
+border.width: 2
+border.color: #000000
+
+padding.width: 5
+padding.height: 3
+
+*.bg.highlight: 50
+
+! Windows ----------------------------------------------------------------------
+
+window.handle.width: 0
+
+window.button.spacing: 3
+
+window.client.padding.width: 0
+window.client.padding.height: 0
+
+! Active window ----------------------------------------------------------------
+
+window.active.title.bg: raised bevel3 solid
+window.active.title.bg.color: #E7E8EB
+window.active.title.bg.shadow: 0
+
+window.active.label.bg: parentrelative
+window.active.label.text.color: #525D76
+window.active.label.text.font: shadow=y:shadowtint=-100:shadowoffset=1
+
+window.active.handle.bg: flat solid
+window.active.handle.bg.color: #000000
+
+window.active.grip.bg: flat solid
+window.active.grip.bg.color: #000000
+
+window.active.button.*.bg: parentrelative
+window.active.button.*.image.color: #000000
+window.active.button.*.hover.image.color: #3399FF
+window.active.button.*.pressed.image.color: #3366FF
+window.active.button.*.toggled.image.color: #3366FF
+window.active.button.*.disabled.image.color: #909090
+
+! Inactive window --------------------------------------------------------------
+
+!window.inactive.border.color: #202020
+
+window.inactive.title.bg: raised bevel3 solid
+window.inactive.title.bg.color: #E7E8EB
+window.inactive.title.bg.shadow: 0
+
+window.inactive.label.bg: parentrelative
+!window.active.label.bg.border.color: #202020
+window.inactive.label.text.color: #525D76
+window.inactive.label.text.font: shadow=y:shadowtint=-100:shadowoffset=1
+
+window.inactive.handle.bg: flat solid
+!window.inactive.handle.bg.color: #202020
+
+window.inactive.grip.bg: flat solid
+!window.inactive.grip.bg.color: #202020
+
+window.inactive.button.*.bg: parentrelative
+window.inactive.button.*.image.color: #909090
+
+! Menus ------------------------------------------------------------------------
+
+menu.border.width: 1
+menu.border.color: #161A26
+
+menu.padding.width: 10
+menu.padding.height: 4
+
+menu.overlap: 0
+menu.overlap.x: 0
+menu.overlap.y: 0
+
+menu.spacing: 6
+
+menu.title.bg: flat solid
+menu.title.bg.color: #252935
+menu.title.text.color: #FFFFFF
+
+menu.items.justify: left
+menu.items.bg: flat solid
+menu.items.bg.color: #353945
+menu.items.text.color: #E0E0E0
+
+menu.items.active.bg: flat border solid
+menu.items.active.bg.color: #454955
+menu.items.active.bg.border.color: #606060
+menu.items.active.text.color: #FFFFFF
+
+menu.items.disabled.text.color: #A0A0A0
+
+menu.separator.width: 1
+menu.separator.color: #555965
+menu.separator.padding.width: 4
+menu.separator.padding.height: 3
+
+! OSD --------------------------------------------------------------------------
+
+osd.border.width: 1
+osd.border.color: #161A26
+
+osd.padding.width: 6
+osd.padding.height: 6
+
+! Popup windows
+
+osd.bg: flat solid
+osd.bg.color: #353945
+
+osd.hilight.bg: flat solid
+osd.hilight.bg.color: #5294E2
+
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: #202020
+
+osd.label.bg: parentrelative
+osd.label.text.color: #FFFFFF
+
+osd.inactive.label.bg: parentrelative
+osd.inactive.label.text.color: #808080
+
+! Focus selection
+
+osd.focus.color: #FFFFFF
+
+osd.focus.border.width: 1
+osd.focus.border.color: #FFFFFF
+
+osd.focus.margin: 6
+osd.focus.marginicons: 12
+
+osd.focus.hiliteouter: 25
+osd.focus.hiliteinner: 20
+
+! Focus outline
+
+osd.outline.width: 4
+osd.outline.color: #5294E2
+
+osd.outline.border.width: 0
+osd.outline.border.color: #000000
