@@ -1,0 +1,139 @@
+# Background definitions -------------------------------------------------------
+
+# ID 1
+rounded = 0
+border_width = 1
+background_color = #060A16 90
+border_color = #000000 90
+borders = --+-
+
+# ID 2
+rounded = 0
+border_width = 2
+background_color = #FFFFFF 50 @30-100,50
+#background_color_to = #FFFFFF 0
+border_color = #5294E2 100 @15-100,40-80
+borders = +---
+
+# ID 3
+rounded = 0
+border_width = 1
+background_color = #000000 0
+border_color = #000000 0
+borders = -+--
+
+# ID 4
+rounded = 0
+border_width = 0
+background_color = #FFFFFF 10
+border_color = #000000 90
+
+# ID 5
+rounded = 0
+border_width = 2
+background_color = #F6F6F6 100
+border_color = #202020 100
+
+# Element definitions ----------------------------------------------------------
+
+# Panel
+panel_monitor = all
+panel_position = top center horizontal
+panel_size = 100% 26
+panel_margin = 0 0
+panel_padding = 0 0 0
+panel_dock = 1
+panel_layer = top
+panel_background_id = 1
+panel_items = LTSC
+wm_menu = 0
+
+# Autohide
+autohide = 0
+autohide_show_timeout = 0.25
+autohide_hide_timeout = 1
+autohide_height = 1
+strut_policy = follow_size
+
+# Taskbar
+taskbar_mode = single_desktop
+taskbar_padding = 4 0 2
+taskbar_background_id = 3
+taskbar_active_background_id = 3
+
+# Launchers
+#launcher_left_padding = 4
+#launcher_padding = 6 0 0
+#launcher_item_app = /home/user/.local/share/applications/steambox-start-menu.desktop
+
+# Tasks
+urgent_nb_of_blink = 8
+task_icon = 1
+task_text = 1
+task_centered = 1
+task_maximum_size = 240 24
+task_padding = 4 2
+task_background_id = 3
+task_active_background_id = 2
+task_urgent_background_id = 2
+task_iconified_background_id = 3
+task_tooltip = 1
+
+# Task icon
+task_icon_asb = 75 0 0
+task_active_icon_asb = 100 0 0
+task_urgent_icon_asb = 100 0 0
+task_iconified_icon_asb = 70 0 0
+
+# Task font
+task_font = Ubuntu 10
+task_font_color = #FFFFFF 75
+task_active_font_color = #FFFFFF 100
+task_urgent_font_color = #FFF6F0 100
+task_iconified_font_color = #FFFFFF 70
+font_shadow = 0
+
+# System tray
+systray = 1
+systray_padding = 8 0 6
+systray_sort = ascending
+systray_background_id = 4
+systray_icon_size = 20
+systray_icon_asb = 100 0 0
+
+# Tooltips
+tooltip_padding = 2 2
+tooltip_show_timeout = 0.75
+tooltip_hide_timeout = 0.35
+tooltip_background_id = 5
+tooltip_font = Ubuntu 10
+tooltip_font_color = #000000 100
+
+# Clock
+time1_format = %H:%M
+time1_font = Ubuntu 10
+#time2_format = %a %d %b
+#time2_font = Ubuntu 8
+clock_tooltip = %A, %d %B %Y
+clock_font_color = #FFFFFF 100
+clock_padding = 6 0
+clock_background_id = 4
+clock_lclick_command = zenity --calendar
+clock_right_padding = 4
+
+# Battery
+battery = 0
+battery_low_status = 10
+battery_low_cmd = notify-send "Battery is low"
+battery_hide = 95
+bat1_font = Ubuntu 10
+bat2_font = Ubuntu 8
+battery_font_color = #FFFFFF 100
+battery_padding = 0 0
+battery_background_id = 0
+
+# Mouse
+mouse_middle = close
+mouse_right = maximize_restore_decorate
+mouse_scroll_up = toggle
+mouse_scroll_down = iconify
