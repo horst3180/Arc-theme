@@ -38,7 +38,7 @@ Because this theme is heavily based on the pixmap engine, a lot of the styling c
 
 * Open the `assets.svg` or `assets-dark.svg` file in inkscape. Each object in the .svg file corresponds to an image in the `assets` or `assets-dark` folder
 
-* Find the object you want to edit and make your changes. Important: Don't change the obejct id!
+* Find the object you want to edit and make your changes. Important: Don't change the object id!
 
 * Save `assets.svg` and delete the images corresponding to the edited .svg objects from the `assets` folder (or just delete everything in the `assets` folder)
 
