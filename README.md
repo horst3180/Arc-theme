@@ -38,7 +38,7 @@ Main distributions that meet these requirements are
 * Fedora 21 - 24
 * openSUSE 13.2, Leap 42.1 and Tumbleweed
 
-Derivatives of these distributions should work, as well.
+Derivatives of these distributions should work as well.
 
 If your distribution isn't listed, please check the requirements yourself.
 
