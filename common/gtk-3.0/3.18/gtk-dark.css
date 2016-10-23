@@ -1594,8 +1594,9 @@ column-header .button, column-header .button:hover, column-header .button:active
 .scrollbar {
   -GtkRange-slider-width: 13;
   -GtkRange-trough-border: 0;
-  -GtkScrollbar-has-backward-stepper: false;
-  -GtkScrollbar-has-forward-stepper: false;
+  -GtkRange-stepper-size: 13;
+  -GtkScrollbar-has-backward-stepper: true;
+  -GtkScrollbar-has-forward-stepper: true;
   -GtkScrollbar-min-slider-length: 42;
   -GtkRange-stepper-spacing: 0;
   -GtkRange-trough-under-steppers: 1; }
