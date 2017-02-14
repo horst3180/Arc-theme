@@ -1,5 +1,5 @@
-var gulp        = require("gulp");
-var sass        = require("gulp-sass");
+var gulp        = require('gulp');
+var sass        = require('gulp-sass');
 var rename      = require('gulp-rename');
 
 gulp.task('sass', function () {
@@ -12,7 +12,7 @@ gulp.task('sass', function () {
             }
         }))
         .pipe(rename(function (path) {
-            path.dirname += "/../";
+            path.dirname += '/../';
         }))
         .pipe(gulp.dest('./'))
 });
