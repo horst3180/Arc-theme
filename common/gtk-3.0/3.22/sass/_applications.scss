@@ -1,0 +1,862 @@
+//
+// Tab overrides
+//
+.gedit-bottom-panel-paned notebook,
+terminal-window notebook {
+  > header.top > tabs > tab:checked { box-shadow: inset 0 -1px $borders_color; }
+}
+
+//
+// GNOME Terminal, MATE Terminal
+//
+terminal-window,
+.mate-terminal {
+
+  notebook {
+    > header.top {
+      padding-top: 3px;
+
+      box-shadow: inset 0  1px opacify($header_border, 1),
+                  inset 0 -1px $borders_color;
+
+      button {
+        padding: 0;
+        min-width: 24px;
+        min-height: 24px;
+      }
+    }
+  }
+}
+
+//
+// Nautilus
+//
+.nautilus-canvas-item {
+  border-radius: 2px;
+}
+
+.nautilus-desktop.nautilus-canvas-item {
+  color: white;
+  text-shadow: 1px 1px transparentize(black, 0.4);
+
+  &:active { color: $fg_color; }
+
+  &:selected {
+    color: $selected_fg_color;
+    text-shadow: none;
+  }
+}
+
+.nautilus-canvas-item.dim-label,
+.nautilus-list-dim-label {
+  color: mix($fg_color, $bg_color, 50%);
+
+  &:selected, &:selected:focus { color: mix($selected_fg_color, $selected_bg_color, 80%); }
+}
+
+.nautilus-window {
+  // Workaround for https://bugzilla.gnome.org/show_bug.cgi?id=724096
+
+  searchbar { border-top: 1px solid $borders_color; }
+  .searchbar-container { margin-top: -1px; }
+}
+
+.nautilus-window notebook,
+.nautilus-window notebook > stack:not(:only-child) searchbar {
+  background-color: $base_color;
+}
+
+button.nautilus-circular-button.image-button {
+  @extend button.circular;
+}
+
+$disk_space_unknown: transparentize($fg_color, 0.5);
+$disk_space_used: transparentize($selected_bg_color, 0.2);
+$disk_space_free: darken($bg_color, 3%);
+
+.disk-space-display {
+  border-style: solid;
+  border-width: 1px;
+
+  &.unknown {
+    background-color: $disk_space_unknown;
+    border-color: darken($disk_space_unknown, 10%);
+  }
+  &.used {
+    background-color: $disk_space_used;
+    border-color: darken($disk_space_used, 10%);
+  }
+  &.free {
+    background-color: $disk_space_free;
+    border-color: darken($disk_space_free, 10%);
+  }
+}
+
+@keyframes needs_attention_keyframes {
+    0% { @include button(header-hover); }
+    100% { @include button(header-active) }
+}
+
+.nautilus-operations-button-needs-attention {
+  animation: needs_attention_keyframes 2s ease-in-out;
+}
+.nautilus-operations-button-needs-attention-multiple {
+  animation: needs_attention_keyframes 3s ease-in-out;
+  animation-iteration-count: 3;
+}
+
+// Batch renaming dialog
+.conflict-row.activatable {
+  &, &:active {
+    color: $error_fg_color;
+    background-color: $error_color;
+  }
+
+  &:hover { background-color: lighten($error_color, 10%); }
+
+  &:selected {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+  }
+}
+
+//
+// Nemo
+//
+.nemo-desktop.nemo-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
+
+.nemo-window {
+
+  .nemo-places-sidebar.frame { border-width: 0; }
+  notebook { background-color: $base_color; }
+
+  // Rename entry
+  .nemo-window-pane widget.entry {
+    border: 1px solid;
+    border-radius: 3px;
+
+    @include entry(focus);
+
+    &:selected { &:focus, & { @extend %selected_items; }}
+  }
+
+  // Pathbar
+  .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) {
+
+    > button {
+      &:not(:last-child):not(:only-child) { margin: 0 0 1px 0; }
+
+      @include button(header-hover);
+
+      &:hover { background-color: lighten($header_button_bg, 15%); }
+      &:active, &:checked { @include button(header-active); }
+      &:disabled { color: transparentize($header_fg, 0.4); }
+
+      &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
+    }
+
+    @include pathbar_linking_rules($sep_color:$header_button_border);
+  }
+}
+
+//
+// Caja
+//
+.caja-desktop { @extend .nautilus-desktop.nautilus-canvas-item; }
+
+.caja-notebook { border-top: 1px solid $borders_color; }
+.caja-side-pane .frame { border-width: 1px 0 0; }
+.caja-notebook .frame { border-width: 0 0 1px; }
+
+//
+// Gedit
+//
+.open-document-selector-treeview.view {
+  padding: 3px 6px 3px 6px;
+  border-color: $base_color;  // disable borders, making them transparent doesn't work for some reason
+
+  &:hover {
+    background-color: mix($fg_color, $base_color, 7%);
+
+    &:selected {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
+    }
+  }
+}
+
+.open-document-selector-name-label {
+  color: $fg_color;
+}
+
+.open-document-selector-path-label {
+    color: mix($fg_color, $base_color, 50%);
+    font-size: smaller;
+
+    &:selected { color: transparentize($selected_fg_color, 0.1); }
+}
+
+.gedit-document-panel {
+
+  row button {
+    min-width: 22px;
+    min-height: 22px;
+    padding: 0;
+
+    color: transparent;
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    image { color: inherit; }
+  }
+
+  row:hover:not(:selected) button {
+    color: mix($bg_color, $fg_color, 35%);
+
+    &:hover { color: lighten(red, 15%); }
+    &:active { color: $fg_color; }
+  }
+
+  row:hover:selected button:hover {
+    color: lighten(red, 20%);
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    &:active { color: $selected_fg_color; }
+  }
+}
+
+.gedit-document-panel-dragged-row {
+  border: 1px solid $borders_color;
+  background-color: darken($bg_color, 10%);
+  color: $fg_color;
+}
+
+.gedit-side-panel-paned statusbar {
+  border-top: 1px solid $borders_color;
+  background-color: $bg_color;
+}
+
+.gedit-search-slider {
+  background-color: lighten($bg_color, 2%);
+  padding: 6px;
+  border-color: $borders_color;
+  border-radius: 0 0 2px 2px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+}
+
+.gedit-search-entry-occurrences-tag {
+  color: transparentize($fg_color, 0.4);
+  border: none;
+  margin: 2px;
+  padding: 2px;
+}
+
+.gedit-map-frame {
+  border {
+    @if $variant=='light' { border-color: transparentize(black, 0.7); }
+    border-width: 0;
+
+    &:dir(ltr) { border-left-width: 1px; }
+    &:dir(rtl) { border-right-width: 1px; }
+  }
+}
+
+//
+// Pluma
+//
+
+.pluma-window statusbar frame > border { border: none; }
+
+.pluma-window notebook > stack scrolledwindow { border-width: 0 0 1px 0; }
+
+#pluma-status-combo-button {
+  min-height: 0;
+  padding: 0;
+
+  border-top: none;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+//
+// Gnome Builder
+//
+// TODO: Merge this with the upstream stylesheet
+
+.gb-search-entry-occurrences-tag { background: none; }
+
+workbench.csd > stack.titlebar:not(headerbar) {
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+
+  headerbar {
+    &,
+    &:first-child,
+    &:last-child { border-radius: $_header_radius $_header_radius 0 0; }
+  }
+}
+
+editortweak .linked > entry.search:focus + .gb-linked-scroller { border-top-color: $selected_bg_color; }
+
+layouttab {
+  background-color: $base_color;
+}
+
+layout {
+  border: 1px solid $borders_color;
+  -PnlDockBin-handle-size: 1;
+}
+
+eggsearchbar box.search-bar {
+  border-bottom: 1px solid $borders_color;
+}
+
+pillbox {
+  color: $selected_fg_color;
+  background-color: $selected_bg_color;
+  border-radius: 3px;
+
+  &:disabled label { color: transparentize($selected_fg_color, 0.5) }
+}
+
+docktabstrip {
+  padding: 0 6px;
+
+  background-color: $bg_color;
+  border-bottom: 1px solid $borders_color;
+
+  docktab {
+    min-height: 28px;
+    border: solid transparent;
+    border-width: 0 1px;
+
+    label { opacity: 0.5; }
+    &:checked, &:hover { label { opacity: 1; }}
+
+    &:checked {
+      border-color: $borders_color;
+      background-color: $base_color;
+    }
+  }
+}
+
+dockbin {
+  border: 1px solid $borders_color;
+  -PnlDockBin-handle-size: 1;
+}
+
+dockpaned {
+  border: 1px solid $borders_color;
+}
+
+dockoverlayedge {
+  background-color: $bg_color;
+
+  docktabstrip {
+    padding: 0;
+    border: none;
+  }
+
+  &.left-edge tab:checked,
+  &.right-edge tab:checked {
+    border-width: 1px 0;
+  }
+}
+
+popover.messagepopover {
+  &.background { padding: 0; }
+
+  .popover-content-area { margin: 16px; }
+  .popover-action-area {
+    margin: 8px;
+
+    button:not(:first-child):not(:last-child) { margin: 0 4px; }
+  }
+}
+
+popover.popover-selector {
+  padding: 0;
+
+  list {
+    row { padding: 5px 0; }
+    row image { margin-left: 3px; margin-right: 10px; }
+  }
+}
+
+entry.search.preferences-search {
+  border: none;
+  border-right: 1px solid $borders_color;
+  border-bottom: 1px solid $borders_color;
+  border-radius: 0;
+}
+
+preferences stacksidebar.sidebar {
+  list { background-image: _solid($base_color); }
+
+  list separator { background-color: transparent; }
+}
+
+devhelppanel entry:focus,
+symboltreepanel entry:focus {
+  border-color: $borders_color
+}
+
+button.run-arrow-button {
+  min-width: 12px;
+}
+
+omnibar.linked > entry:not(:only-child) { border-style: solid; border-radius: 3px; margin-left: 1px; margin-right: 1px; }
+
+gstyleslidein {
+  #scale_box,
+  #strings_controls,
+  #palette_controls,
+  #components_controls {
+    button.toggle:checked { color: $fg_color; }
+  }
+}
+
+configurationview {
+  entry.flat { background: none; }
+  list { border-width: 0; }
+}
+
+//
+// Epiphany
+//
+//EphyWindow .floating-bar { // Epiphany overrides the floating-bar style, so reset it
+//  color: $fg_color;
+//}
+
+//
+// Gnome Documents
+//
+.documents-scrolledwin.frame { border-width: 0; }
+
+button.documents-load-more {
+  border-width: 1px 0 0;
+  border-radius: 0;
+}
+
+.documents-icon-bg {
+  background-color: $selected_bg_color;
+  color: $selected_fg_color;
+  border-radius: 2px;
+}
+
+.documents-collection-icon {
+  background-color: transparentize($fg_color, 0.7);
+  border-radius: 2px;
+}
+
+button.documents-favorite:active,
+button.documents-favorite:active:hover {
+  color: lighten($selected_bg_color, 20%);
+}
+
+.documents-entry-tag {
+  color: $selected_fg_color;
+  background: $selected_bg_color;
+  border-radius: 2px;
+  border-width: 0;
+  margin: 2px;
+  padding: 4px;
+
+  &:hover {
+    color: $selected_fg_color;
+    background: lighten($selected_bg_color, 4%);
+  }
+  &:active {
+    color: $selected_fg_color;
+    background: darken($selected_bg_color, 4%);
+  }
+}
+
+.content-view.document-page {
+  border-style: solid;
+  border-width: 3px 3px 6px 4px;
+  border-image: url("assets/thumbnail-frame.png") 3 3 6 4;
+}
+
+//
+// Gnome Photos
+//
+.photos-entry-tag { @extend .documents-entry-tag; }
+
+.photos-collection-icon { @extend .documents-collection-icon; }
+
+.photos-fade-in {
+    opacity: 1.0;
+    transition: opacity 0.2s ease-out;
+}
+
+.photos-fade-out {
+    opacity: 0.0;
+    transition: opacity 0.2s ease-out;
+}
+
+//
+// Gnome Tweak Tool
+//
+.tweak-categories,
+.tweak-category:not(:selected):not(:hover) {
+  background-image: _solid($base_color);
+}
+
+//
+// Transmission
+//
+.tr-workarea undershoot,
+.tr-workarea overshoot {
+  border-color: transparent; // Remove black border on over- and undershoot
+}
+
+//
+// Gnome Flashback
+//
+#gf-bubble,
+#gf-osd-window,
+#gf-input-source-popup,
+#gf-candidate-popup {
+  &, &.solid {
+    color: lighten($osd_fg_color, 7%);
+    background-color: $osd_bg_color;
+    border: 1px solid darken($osd_bg_color, 8%);
+    border-radius: 2px;
+  }
+
+  levelbar {
+    block {
+      &.low, &.high, &.full {
+        background-color: $selected_bg_color;
+        border-color: $selected_bg_color;
+      }
+      &.empty { background-color: darken($osd_bg_color, 5%); }
+    }
+    trough { background: none; }
+  }
+
+  // FIXME still needs button styling
+}
+
+#gf-input-source {
+  min-height: 32px;
+  min-width: 40px;
+
+  &:selected {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+    border-radius: 2px;
+  }
+}
+
+gf-candidate-box {
+  label { padding: 3px; }
+
+  &:hover,
+  &:selected {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+    border-radius: 2px;
+  }
+}
+
+//
+// Mate OSD Window
+//
+MsdOsdWindow.background.osd {
+  border-radius: 2px;
+  border: 1px solid darken($osd_bg_color, 8%);
+
+  .progressbar {
+    background-color: $selected_bg_color;
+    border: none;
+    border-color: red;
+    border-radius: 5px;
+  }
+  .trough {
+    background-color: darken($osd_bg_color, 5%);
+    border: none;
+    border-radius: 5px;
+  }
+}
+
+//
+// Mate/Gnome Flashback Panel
+//
+.mate-panel-menu-bar,
+panel-toplevel.background {
+
+  &, menubar { background-color: opacify($panel_bg, 1); }
+
+  menubar,
+  #PanelApplet label,
+  #PanelApplet image { color: $panel_fg; }
+
+  // Panel buttons
+  button:not(#tasklist-button) {
+    @extend %panelbutton;
+  }
+
+  button,
+  #tasklist-button {
+    label, image { color: inherit; }
+  }
+
+  .wnck-pager {
+    color: mix($panel_fg, black, 50%);
+    background-color: darken($panel_bg, 10%);
+
+    &:hover {
+      background-color: lighten($panel_bg, 5%);
+    }
+
+    &:selected {
+      color: lighten($selected_bg_color, 20%);
+      background-color: $selected_bg_color;
+    }
+  }
+
+  na-tray-applet {
+    -NaTrayApplet-icon-padding: 0;
+    -NaTrayApplet-icon-size: 16px;
+  }
+}
+
+// Xfce Panel
+.xfce4-panel.panel {
+  background-color: $panel_bg;
+
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+
+  button.flat { @extend %panelbutton; }
+}
+
+#tasklist-button {
+  color: transparentize($panel_fg, 0.2);
+  border-radius: 0;
+  border: none;
+  background-color: transparentize($panel_bg, 1);
+
+  &:hover {
+    color: lighten($panel_fg, 10%);
+    background-color: transparentize(black, 0.83);
+  }
+
+  &:checked {
+    color: white;
+    background-color: transparentize(black, 0.75);
+    box-shadow: inset 0 -2px $selected_bg_color;
+  }
+}
+
+%panelbutton {
+  color: $panel_fg;
+  border-radius: 0;
+  border: none;
+  background-color: transparentize($panel_bg, 1);
+
+  &:hover {
+    border: none;
+    background-color: lighten($panel_bg, 10%);
+  }
+  &:active, &:checked {
+    color: $selected_fg_color;
+    border: none;
+    background-color: $selected_bg_color;
+
+    label, image { color: inherit; }
+  }
+}
+
+//
+// Floating Bar
+//
+.nautilus-window .floating-bar {
+  padding: 1px;
+  background-color: $selected_bg_color;
+  color: $selected_fg_color;
+  border-radius: 2px 2px 0 0;
+
+  &.bottom.left { border-top-left-radius: 0; }
+  &.bottom.right { border-top-right-radius: 0; }
+
+  button {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+
+    @extend %selected-button;
+  }
+}
+
+// Elementary Apps
+
+//
+// Birdie
+//
+//BirdieWidgetsTweetList * {
+//  background-image: none;
+//  background-color: transparent;
+//}
+
+//
+// Marlin / Pantheon Files
+//
+//MarlinViewWindow {
+//
+//  *:selected, *:selected:focus {
+//    color: $selected_fg_color;
+//    background-color: $selected_bg_color;
+//    outline-color: transparent;
+//  }
+//  GtkIconView.view:selected {
+//    &, &:focus, &:hover, &:focus:hover { background-color: transparent; }
+//  }
+//  FMListView, FMColumnView { outline-color: transparent; }
+//}
+
+.marlin-pathbar.pathbar {
+  border-radius: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
+
+  @include entry(header-normal);
+
+  &:focus { @include entry(header-focus) }
+
+  &:disabled { @include entry(header-insensitive) }
+
+  &:active, &:checked {
+    color: $selected_bg_color;
+  }
+}
+
+//
+// Gala
+//
+.gala-notification {
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-image: _solid(white);
+    background-color: transparent;
+
+  .title, .label {
+    color: #5c616c;
+  }
+}
+
+//
+// Wingpanel
+//
+.panel {
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px 2px transparentize(black, 0.4);
+  -gtk-icon-shadow: 0 1px 2px transparentize(black, 0.4);
+
+  &-shadow {
+    background-image: none;
+    background-color: transparent;
+  }
+  .menu {
+    box-shadow: none;
+
+    .menuitem {
+      font-weight: normal;
+      text-shadow: none;
+      -gtk-icon-shadow: none;
+    }
+
+    .window-frame.menu.csd,
+    .window-frame.popup.csd {
+      box-shadow: 0 0 0 1px transparentize(black, 0.8),
+                  0 10px 20px transparentize(black, 0.81),
+                  0 6px 6px transparentize(black, 0.77);
+    }
+  }
+  .menubar > .menuitem {
+    padding: 3px 6px;
+    &:hover { background-color: transparent; }
+  }
+  .window-frame.menu.csd,
+  .window-frame.popup.csd { box-shadow: none; }
+}
+
+.composited-indicator {
+  background-color: transparent;
+  color: white;
+  text-shadow: 0 1px 2px transparentize(black, 0.4);
+  -gtk-icon-shadow: 0 1px 2px transparentize(black, 0.4);
+
+  > GtkWidget > GtkWidget:first-child { padding: 0 2px; }
+
+  .menuitem:active, .menuitem:hover {
+    border-style: none;
+    background-image: none;
+    box-shadow: none;
+  }
+  > .popup > .menu {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+.panel-app-button > GtkWidget > GtkWidget:first-child {
+  padding: 0 2px 0 4px;
+}
+
+.panel .menu .spinner,
+.menu .spinner { opacity: 1 } // Fixes sound indicator buttons
+
+//
+// Wingpanel Popover
+//
+//WingpanelWidgetsIndicatorPopover.popover {
+//  padding: 0;
+//
+//  text-shadow: none;
+//  -gtk-icon-shadow: none;
+//
+//  menuitem {
+//    padding: 5px;
+//    outline-color: transparent;
+//    text-shadow: none;
+//    -gtk-icon-shadow: none;
+//    border: solid transparent;
+//    border-width: 1px 0;
+//
+//    label, image { padding: 0 3px; }
+//
+//    &:hover, &:active {
+//      background-color: if($variant == 'light', transparentize(black, 0.96), transparentize(white, 0.95));
+//      border: solid if($variant == 'light', transparentize(black, 0.92), transparentize(white, 0.93));
+//      border-width: 1px 0;
+//    }
+//    *:disabled { color: $insensitive_fg_color; }
+//  }
+//}
+
+//
+// Pantheon Terminal
+//
+//PantheonTerminalPantheonTerminalWindow.background {
+//   background-color: transparent;
+//}
+
+//
+// Switchboard
+//
+//SwitchboardCategoryView .view:selected,
+//SwitchboardCategoryView .view:selected:focus {
+//  color: $fg_color;
+//}
