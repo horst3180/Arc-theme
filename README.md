@@ -1,3 +1,11 @@
+# Changes:
+
+- Bigger tasklist button on xfce applet.
+
+
+
+
+
 # Arc Theme
 
 Arc is a flat theme with transparent elements for GTK 3, GTK 2 and GNOME Shell which supports GTK 3 and GTK 2 based desktop environments like GNOME, Unity, Budgie, Pantheon, Xfce, MATE, etc.

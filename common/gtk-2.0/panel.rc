@@ -48,6 +48,11 @@ style "panelbar" {
 
 style "panelbuttons" {
 
+  # The maximum length of a button before the label ellipsizes.
+  # When this value is set to -1 the button will expand to the
+  # entire available space.
+  XfceTasklist::max-button-length = 250
+  
   xthickness = 4
   ythickness = 0
 
