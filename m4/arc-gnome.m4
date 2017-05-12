@@ -32,7 +32,9 @@ AC_DEFUN([ARC_GNOME], [
     AS_IF(
         [! test -e "$GNOMEDIR/$GNOME_VERSION"],
         [AC_MSG_ERROR([Invalid GNOME version: $GNOME_VERSION])]
-    )
+	)
+
     AC_SUBST([GNOME_VERSION])
+    AM_CONDITIONAL([GTK3_VERSIONED_DIR], [test "$GNOME_VERSION" != "3.14"])
     AC_MSG_RESULT([Building for GNOME $GNOME_VERSION])
 ])
