@@ -514,7 +514,7 @@ style "default" {
       function = RESIZE_GRIP
       state = NORMAL
       detail = "statusbar"
-      overlay_file = "assets/null.png"	
+      overlay_file = "assets/null.png"  
       overlay_border = { 0,0,0,0 }
       overlay_stretch = FALSE
     }
@@ -552,7 +552,7 @@ style "scrollbar" {
     image {
       function = BOX
       detail = "trough"
-      file = "assets/trough-scrollbar-horiz.png"
+      file = "assets/assets-dark/trough-scrollbar-horiz.png"
       border = { 2, 2, 3, 3 }
       stretch = TRUE
       orientation = HORIZONTAL
@@ -561,7 +561,7 @@ style "scrollbar" {
     image {
       function = BOX
       detail = "trough"
-      file = "assets/trough-scrollbar-vert.png"
+      file = "assets/assets-dark/trough-scrollbar-vert.png"
       border = { 3, 3, 2, 2 }
       stretch = TRUE
       orientation = VERTICAL
@@ -774,7 +774,7 @@ style "menu_item"
       recolorable = TRUE
       state = PRELIGHT
       shadow = OUT
-      overlay_file = "assets/menu-checkbox-unchecked-selected.png"
+      overlay_file = "assets/assets-dark/menu-checkbox-unchecked-selected.png"
       overlay_stretch = FALSE
     }
 
@@ -810,7 +810,7 @@ style "menu_item"
       recolorable = TRUE
       state = PRELIGHT
       shadow = IN
-      overlay_file = "assets/menu-checkbox-checked-selected.png"
+      overlay_file = "assets/assets-dark/menu-checkbox-checked-selected.png"
       overlay_stretch = FALSE
     }
 
@@ -846,7 +846,7 @@ style "menu_item"
       function = OPTION
       state = PRELIGHT
       shadow = OUT
-      overlay_file = "assets/menu-radio-unchecked-selected.png"
+      overlay_file = "assets/assets-dark/menu-radio-unchecked-selected.png"
       overlay_stretch = FALSE
     }
 
@@ -878,7 +878,7 @@ style "menu_item"
       function = OPTION
       state = PRELIGHT
       shadow = IN
-      overlay_file = "assets/menu-radio-checked-selected.png"
+      overlay_file = "assets/assets-dark/menu-radio-checked-selected.png"
       overlay_stretch = FALSE
     }
 
@@ -986,7 +986,7 @@ style "entry" {
       function = SHADOW
       state = NORMAL
       detail = "entry"
-      file = "assets/entry-bg.png"
+      file = "assets/assets-dark/entry-bg.png"
       border = {6, 6, 6, 6}
       stretch = TRUE
     }
@@ -995,7 +995,7 @@ style "entry" {
       function = SHADOW
       state = ACTIVE
       detail = "entry"
-      file = "assets/entry-active-bg.png"
+      file = "assets/assets-dark/entry-active-bg.png"
       border = {6, 6, 6, 6}
       stretch = TRUE
     }
@@ -1004,7 +1004,7 @@ style "entry" {
       function = SHADOW
       state = INSENSITIVE
       detail = "entry"
-      file = "assets/entry-disabled-bg.png"
+      file = "assets/assets-dark/entry-disabled-bg.png"
       border = {6, 6, 6, 6}
       stretch = TRUE
     }
@@ -1013,20 +1013,20 @@ style "entry" {
       function = FLAT_BOX
       state    = ACTIVE
       detail   = "entry_bg"
-      file     = "assets/entry-background.png"
+      file     = "assets/assets-dark/entry-background.png"
     }
 
     image {
       function = FLAT_BOX
       state    = INSENSITIVE
       detail   = "entry_bg"
-      file     = "assets/entry-background-disabled.png"
+      file     = "assets/assets-dark/entry-background-disabled.png"
     }
 
     image {
       function = FLAT_BOX
       detail   = "entry_bg"
-      file     = "assets/entry-background.png"
+      file     = "assets/assets-dark/entry-background.png"
     }
   }
 }
@@ -1039,7 +1039,7 @@ style "notebook_entry" {
       function = SHADOW
       state = NORMAL
       detail = "entry"
-      file = "assets/entry-notebook.png"
+      file = "assets/assets-dark/entry-notebook.png"
       border = {6, 6, 6, 6}
       stretch = TRUE
     }
@@ -1048,7 +1048,7 @@ style "notebook_entry" {
       function = SHADOW
       state = ACTIVE
       detail = "entry"
-      file = "assets/entry-active-notebook.png"
+      file = "assets/assets-dark/entry-active-notebook.png"
       border = {6, 6, 6, 6}
       stretch = TRUE
     }
@@ -1057,7 +1057,7 @@ style "notebook_entry" {
       function = SHADOW
       state = INSENSITIVE
       detail = "entry"
-      file = "assets/entry-disabled-notebook.png"
+      file = "assets/assets-dark/entry-disabled-notebook.png"
       border = {6, 6, 6, 6}
       stretch = TRUE
     }
@@ -1413,9 +1413,9 @@ style "spinbutton" {
       detail = "spinbutton_up"
       file = "assets/up-background-rtl.png"
       border = { 4, 1, 5, 0 }
-      stretch	= TRUE
+      stretch = TRUE
       overlay_file = "assets/arrow-up-small-prelight.png"
-      overlay_stretch	= FALSE
+      overlay_stretch = FALSE
       direction = RTL
     }
 
@@ -1646,7 +1646,7 @@ style "notebook" {
       border = { 0,0,0,0 }
       stretch = TRUE
       gap_side = LEFT
-    }	
+    } 
 
     image {
       function = EXTENSION
@@ -1795,7 +1795,7 @@ style "range" {
     image {
       function = BOX
       detail = "trough-lower"
-      file = "assets/trough-horizontal-active.png"
+      file = "assets/assets-dark/trough-horizontal-active.png"
       border = { 8, 8, 0, 0 }
       stretch = TRUE
       orientation = HORIZONTAL
@@ -1813,7 +1813,7 @@ style "range" {
     image {
       function = BOX
       detail = "trough-lower"
-      file = "assets/trough-vertical-active.png"
+      file = "assets/assets-dark/trough-vertical-active.png"
       border = { 0, 0, 8, 8 }
       stretch = TRUE
       orientation = VERTICAL
@@ -2216,10 +2216,10 @@ style "xfwm-tabwin" {
   Xfwm4TabwinWidget::alpha = 1.0
   Xfwm4TabwinWidget::border-radius = 2
 
-	bg[NORMAL] = @bg_color
-	bg[SELECTED] = @bg_color
+  bg[NORMAL] = @bg_color
+  bg[SELECTED] = @bg_color
 
-	fg[NORMAL] = @fg_color
+  fg[NORMAL] = @fg_color
 
   engine "murrine" {
     contrast = 0.7
