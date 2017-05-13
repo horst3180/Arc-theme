@@ -24,7 +24,7 @@ endif # ENABLE_LIGHT
 if ENABLE_DARKER
 	$(MKDIR_P) $(ithemedarkerdir)
 	cp $(srcdir)/index.theme-darker $(ithemedarkerdir)/index.theme
-endif # ENABLE_LIGHT
+endif # ENABLE_DARKER
 
 if ENABLE_DARK
 	$(MKDIR_P) $(ithemedarkdir)
@@ -58,7 +58,7 @@ if ENABLE_DARK
 		$(ithemedarkdir)/cinnamon/cinnamon.css
 endif # ENABLE_DARK
 
-endif # ENABLE_GNOME_SHELL
+endif # ENABLE_CINNAMON
 
 
 if ENABLE_GNOME_SHELL
