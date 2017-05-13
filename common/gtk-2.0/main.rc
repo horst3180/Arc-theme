@@ -28,11 +28,11 @@ style "default" {
   GtkScrollbar::trough-border = 0
   GtkRange::trough-border = 0
   GtkRange::slider-width = 13
-  GtkRange::stepper-size = 0
+  GtkRange::stepper-size = 13
 
   GtkScrollbar::activate-slider = 1
-  GtkScrollbar::has-backward-stepper = 0  
-  GtkScrollbar::has-forward-stepper = 0
+  GtkScrollbar::has-backward-stepper = 1
+  GtkScrollbar::has-forward-stepper = 1
   GtkScrollbar::min-slider-length = 32
   GtkScrolledWindow::scrollbar-spacing = 0
   GtkScrolledWindow::scrollbars-within-bevel = 1
@@ -569,7 +569,7 @@ style "scrollbar" {
 
     image {
       function = ARROW
-      overlay_file = "assets/null.png"
+      overlay_file = "assets/arrow-up.png"
       overlay_border = { 0, 0, 0, 0 }
       overlay_stretch = FALSE
       arrow_direction = UP
@@ -577,7 +577,7 @@ style "scrollbar" {
 
     image {
       function = ARROW
-      overlay_file = "assets/null.png"
+      overlay_file = "assets/arrow-down.png"
       overlay_border = { 0, 0, 0, 0 }
       overlay_stretch = FALSE
       arrow_direction = DOWN
@@ -585,7 +585,7 @@ style "scrollbar" {
 
     image {
       function = ARROW
-      overlay_file = "assets/null.png"
+      overlay_file = "assets/arrow-left.png"
       overlay_border = { 0, 0, 0, 0 }
       overlay_stretch = FALSE
       arrow_direction = LEFT
@@ -593,7 +593,7 @@ style "scrollbar" {
 
     image {
       function = ARROW
-      overlay_file = "assets/null.png"
+      overlay_file = "assets/arrow-right.png"
       overlay_border = { 0, 0, 0, 0 }
       overlay_stretch = FALSE
       arrow_direction = RIGHT
