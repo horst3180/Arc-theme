@@ -1,0 +1,354 @@
+// Drawing mixins
+
+// Solid color image
+@function _solid($c) {
+  @return linear-gradient(to bottom, $c, $c);
+}
+
+// Entries
+
+@mixin entry($t) {
+//
+// Entries drawing function
+//
+// $t: entry type
+//
+
+  @if $t==normal {
+  //
+  // normal entry
+  //
+    color: $text_color;
+    border-color: $entry_border;
+    background-color: $entry_bg;
+  }
+
+  @if $t==focus {
+  //
+  // focused entry
+  //
+    color: $text_color;
+    border-color: if($variant=='light', $selected_bg_color, $button_border);
+    background-color: $entry_bg;
+
+    @if $variant == 'dark' {
+      box-shadow: inset 1px 0 $selected_bg_color,
+                  inset -1px 0 $selected_bg_color,
+                  inset 0 1px $selected_bg_color,
+                  inset 0 -1px $selected_bg_color;
+    }
+  }
+
+  @if $t==insensitive {
+  //
+  // insensitive entry
+  //
+    color: $insensitive_fg_color;
+    border-color: transparentize($entry_border, 0.45);
+    background-color: transparentize($entry_bg, 0.45);
+  }
+
+  @if $t==header-normal {
+  //
+  // normal header-bar entry
+  //
+
+    color: $header_fg;
+    border-color: $header_entry_border;
+    background-color: $header_entry_bg;
+
+    image, image:hover { color: inherit; }
+  }
+
+  @if $t==header-focus {
+  //
+  // focused header-bar entry
+  //
+    color: $selected_fg_color;
+    border-color: if($darker=='false' and $variant=='light', $selected_bg_color, transparent);
+    background-color: $selected_bg_color;
+  }
+
+  @if $t==header-insensitive {
+  //
+  // insensitive header-bar entry
+  //
+    color: transparentize($header_fg, 0.45);
+    border-color: $header_entry_border;
+    background-color: transparentize($header_entry_bg, 0.15);
+  }
+
+  @else if $t==osd {
+  //
+  // normal osd entry
+  //
+    color: $osd_fg_color;
+    border-color: $osd_entry_border;
+    background-color: $osd_entry_bg;
+
+    image, image:hover { color: inherit; }
+  }
+
+  @else if $t==osd-focus {
+  //
+  // active osd entry
+  //
+    color: $selected_fg_color;
+    border-color: $osd_entry_border;
+    background-color: $selected_bg_color;
+  }
+
+  @else if $t==osd-insensitive {
+  //
+  // insensitive osd entry
+  //
+    color: transparentize($osd_fg_color, 0.45);
+    background-color: transparentize($osd_entry_bg, 0.15);
+  }
+}
+
+// Buttons
+
+@mixin button($t, $actionb_bg:red, $actionb_fg: green) {
+//
+// Button drawing function
+//
+// $t:    button type,
+// $actionb_bg, $actionb_fg: used for destructive and suggested action buttons
+
+  @if $t==normal {
+  //
+  // normal button
+  //
+    color: $fg_color;
+    border-color: $button_border;
+    background-color: $button_bg;
+  }
+
+  @else if $t==hover {
+  //
+  // hovered button
+  //
+    color: $fg_color;
+    border-color: $button_border;
+    background-color: lighten($button_bg, 5%);
+  }
+
+  @else if $t==active {
+  //
+  // pushed button
+  //
+    color: $selected_fg_color;
+    border-color: if($variant=='light', $selected_bg_color, $button_border);
+    background-color: $selected_bg_color;
+  }
+
+  @else if $t==insensitive {
+  //
+  // insensitive button
+  //
+    label, & { color: $insensitive_fg_color; }
+
+    border-color: transparentize($button_border, 0.45);
+    background-color: transparentize($button_bg, 0.45);
+  }
+
+  @else if $t==insensitive-active {
+  //
+  // insensitive pushed button
+  //
+    label, & { color: transparentize($selected_fg_color, 0.2); }
+
+    border-color: transparentize($selected_bg_color, 0.25);
+    background-color: transparentize($selected_bg_color, 0.25);
+
+    opacity: 0.6;
+  }
+
+  @if $t==header-normal {
+  //
+  // normal header-bar button
+  //
+    color: $header_fg;
+    outline-offset: -3px;
+    background-color: transparentize($header_bg, 1);
+    border-color: transparentize($header_bg, 1);
+  }
+
+  @else if $t==header-hover {
+  //
+  // hovered header-bar button
+  //
+    color: $header_fg;
+    border-color: $header_button_border;
+    background-color: $header_button_bg;
+  }
+
+  @else if $t==header-active {
+  //
+  // pushed header-bar button
+  //
+    color: $selected_fg_color;
+    border-color: if($darker=='false' and $variant=='light', $selected_bg_color, transparent);
+    background-color: $selected_bg_color;
+  }
+
+  @else if $t==header-insensitive {
+  //
+  // insensitive header-bar button
+  //
+    label, & { color: transparentize($header_fg, 0.45); }
+
+    background-color: transparentize($header_bg, 1);
+    border-color: transparentize($header_bg, 1);
+  }
+
+  @else if $t==header-insensitive-active {
+  //
+  // header-bar insensitive pushed button
+  //
+    color: transparentize($selected_fg_color, 0.25);
+    border-color: transparentize($selected_bg_color, 0.35);
+    background-color: transparentize($selected_bg_color, 0.35);
+  }
+
+  @else if $t==osd {
+  //
+  // normal osd button
+  //
+    color: $osd_fg_color;
+    border-color: $osd_button_border;
+    background-color: $osd_button_bg;
+  }
+
+  @else if $t==osd-hover {
+  //
+  // active osd button
+  //
+    color: $osd_fg_color;
+    border-color: $osd_button_border;
+    background-color: opacify(lighten($osd_button_bg, 7%), 0.1);
+  }
+
+  @else if $t==osd-active {
+  //
+  // active osd button
+  //
+    color: $selected_fg_color;
+    border-color: $osd_button_border;
+    background-color: $selected_bg_color;
+  }
+
+  @else if $t==osd-insensitive {
+  //
+  // insensitive osd button
+  //
+    color: $osd_insensitive_fg_color;
+    border-color: $osd_button_border;
+    background-color: transparentize($osd_button_bg, 0.15);
+  }
+
+  @else if $t==suggested_destructive {
+  //
+  // suggested or destructive action buttons
+  //
+    background-clip: border-box;
+
+    color: $actionb_fg;
+    background-color: $actionb_bg;
+    border-color: $actionb_bg;
+  }
+
+  @else if $t==undecorated {
+  //
+  // reset
+  //
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+  }
+}
+
+//
+// Overshoot
+//
+@mixin overshoot($p, $c:$selected_bg_color) {
+// $p: position
+// $c: base color
+//
+// possible $p values:
+// top, bottom, right, left
+//
+
+  $_big_gradient_length: 60%;
+
+  $_position: center top;
+  $_big_gradient_size: 100% $_big_gradient_length;
+
+  @if $p==bottom {
+    $_position: center bottom;
+  }
+
+  @else if $p==right {
+    $_position: right center;
+    $_big_gradient_size: $_big_gradient_length 100%;
+  }
+
+  @else if $p==left {
+    $_position: left center;
+    $_big_gradient_size: $_big_gradient_length 100%;
+  }
+
+  background-image: -gtk-gradient(radial,
+                                $_position, 0,
+                                $_position, 0.6,
+                                from(transparentize($c, 0.8)),
+                                to(transparentize($c, 1)));
+
+  background-size: $_big_gradient_size;
+  background-repeat: no-repeat;
+  background-position: $_position;
+
+  background-color: transparent; // reset some properties to be sure to not inherit them somehow
+  border: none;                  //
+  box-shadow: none;              //
+}
+
+//
+// Undershoot
+//
+@mixin undershoot($p) {
+// $p: position
+//
+// possible $p values:
+// top, bottom, right, left
+//
+
+  $_undershoot_color_dark: transparentize(black, 0.8);
+  $_undershoot_color_light: transparentize(white, 0.8);
+
+  $_gradient_dir: left;
+  $_dash_bg_size: 10px 1px;
+  $_gradient_repeat: repeat-x;
+  $_bg_pos: center $p;
+
+  background-color: transparent; // shouldn't be needed, but better to be sure;
+
+  @if ($p == left) or ($p == right) {
+    $_gradient_dir: top;
+    $_dash_bg_size: 1px 10px;
+    $_gradient_repeat: repeat-y;
+    $_bg_pos: $p center;
+  }
+
+  background-image: linear-gradient(to $_gradient_dir, // this is the dashed line
+                                    $_undershoot_color_light 50%,
+                                    $_undershoot_color_dark 50%);
+
+  padding-#{$p}: 1px;
+  background-size: $_dash_bg_size;
+  background-repeat: $_gradient_repeat;
+  background-origin: content-box;
+  background-position: $_bg_pos;
+  border: none;
+}
