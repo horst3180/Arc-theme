@@ -2096,12 +2096,12 @@ scale {
   padding: 3px;
 
   &.horizontal {
-    trough { padding: 0 4px; }
+    trough { padding: 2px 4px; }
     highlight, fill { margin: 0 -4px; }
   }
 
   &.vertical {
-    trough { padding: 4px 0; }
+    trough { padding: 4px 2px; }
     highlight, fill { margin: -4px 0; }
   }
 
