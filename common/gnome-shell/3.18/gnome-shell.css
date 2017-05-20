@@ -598,7 +598,9 @@ StScrollBar {
   height: 96px; }
 
 .cycler-highlight {
-  border: 5px solid #5294e2; }
+  border-radius: 3px 3px 0 0;
+  border: 3px solid #5294e2;
+  background-color: rgba(82, 148, 226, 0.35); }
 
 .workspace-switcher {
   background: transparent;
