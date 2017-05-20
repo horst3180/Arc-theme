@@ -814,7 +814,11 @@ StScrollBar {
 //
 //Window Cycler
 //
-.cycler-highlight { border: 5px solid $selected_bg_color; }
+.cycler-highlight {
+  border-radius: 3px 3px 0 0;
+  border: 3px solid $selected_bg_color;
+  background-color: transparentize($selected_bg_color, .65);
+}
 
 //
 // Workspace Switcher
@@ -1294,17 +1298,17 @@ StScrollBar {
     > StIcon {
       icon-size: 18px;
       border-radius: 0px;
-      color: transparent; 
+      color: transparent;
       background-color: transparent;
       background-image: url('#{$asset_path}/misc/message-close.svg');
     }
     &:hover > StIcon {
-      color: transparent; 
+      color: transparent;
       background-color: transparent;
       background-image: url('#{$asset_path}/misc/message-close-hover.svg');
     }
     &:active > StIcon {
-      color: transparent; 
+      color: transparent;
       background-color: transparent;
       background-image: url('#{$asset_path}/misc/message-close-active.svg');
     }
@@ -2106,7 +2110,7 @@ $legacy_icon_size: 24px;
   &:active, &:checked { @include button(osd-active); }
 
   &:grayed { @include button(osd-insensitive); }
-}                             
+}
 
 .keyboard-subkeys { //long press on a key popup
   color: $osd_fg_color;
