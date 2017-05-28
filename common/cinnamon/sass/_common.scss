@@ -1099,7 +1099,6 @@ StScrollBar {
 //
 .menu {
   &-favorites-box {
-    margin: auto;
     padding: 10px;
     transition-duration: 300;
     background-color: $bg_color;
@@ -1116,7 +1115,6 @@ StScrollBar {
   &-places {
 
     &-box {
-      margin: auto;
       padding: 10px;
       border: 0px solid red;
     }
