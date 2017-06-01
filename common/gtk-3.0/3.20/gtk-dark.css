@@ -3230,6 +3230,28 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
   border-bottom: none;
   border-radius: 0; }
 
+.xed-window .xed-panel.side .notebook tab.top {
+  padding: 8px 12px; }
+
+.xed-window .xed-panel.bottom .notebook.frame {
+  border: none; }
+
+.xed-window .small-button {
+  padding: 2px 4px; }
+
+.xed-window .xed-statusbar,
+.xed-window .xed-searchbar {
+  border: 0px solid #2b2e39;
+  border-top-width: 1px; }
+
+.xed-window .xed-goto-line-box {
+  background-color: #3c4150;
+  padding: 6px;
+  border-color: #2b2e39;
+  border-radius: 0 0 2px 2px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid; }
+
 .gb-search-entry-occurrences-tag {
   background: none; }
 

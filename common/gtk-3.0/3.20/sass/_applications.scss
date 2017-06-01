@@ -283,6 +283,36 @@ $disk_space_free: darken($bg_color, 3%);
 }
 
 //
+// Xapps
+//
+.xed-window {
+
+  .xed-panel {
+    &.side .notebook tab.top { padding: 8px 12px; }
+    &.bottom .notebook.frame { border: none; }
+  }
+
+  .small-button { padding: 2px 4px; }
+
+  .xed-statusbar,
+  .xed-searchbar {
+    border: 0px solid $borders_color;
+    border-top-width: 1px;
+  }
+
+  .xed-goto-line-box { @extend %search_slider }
+}
+
+%search_slider {
+  background-color: lighten($bg_color, 2%);
+  padding: 6px;
+  border-color: $borders_color;
+  border-radius: 0 0 2px 2px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+}
+
+//
 // Gnome Builder
 //
 // TODO: Merge this with the upstream stylesheet
