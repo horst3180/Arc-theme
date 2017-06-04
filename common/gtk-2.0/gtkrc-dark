@@ -13,7 +13,7 @@ gtk-color-scheme = "dark_sidebar_bg: #353945"
 gtk-color-scheme = "link_color: #5294e2"
 gtk-color-scheme = "menu_bg: #383c4a"
 
-gtk-icon-sizes = "gtk-button=16,16" # This makes button icons smaller.
+gtk-icon-sizes = "gtk-button=1,1" # This makes button icons smaller.
 gtk-auto-mnemonics = 1
 gtk-primary-button-warps-slider = 1
 
