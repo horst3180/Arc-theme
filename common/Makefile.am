@@ -9,8 +9,8 @@ themedarkdir    = $(datadir)/themes/Arc-Dark
 endif
 
 ithemedir       = $(DESTDIR)$(themedir)
-ithemedarkerdir   = $(DESTDIR)$(themedarkerdir)
-ithemedarkdir  = $(DESTDIR)$(themedarkdir)
+ithemedarkerdir = $(DESTDIR)$(themedarkerdir)
+ithemedarkdir   = $(DESTDIR)$(themedarkdir)
 
 install-exec-hook:
 
@@ -271,7 +271,7 @@ if ENABLE_LIGHT
 	$(MKDIR_P) $(ithemedir)/xfwm4
 
 	cd $(srcdir)/xfwm4 && \
-		cp -R assets/*.png $(ithemedir)/xfwm4 && \
+		cp -R assets/*.xpm $(ithemedir)/xfwm4 && \
 		cp themerc $(ithemedir)/xfwm4/themerc
 endif # ENABLE_LIGHT
 
@@ -279,7 +279,7 @@ if ENABLE_DARKER
 	$(MKDIR_P) $(ithemedarkerdir)/xfwm4
 
 	cd $(srcdir)/xfwm4 && \
-		cp -R assets-dark/*.png $(ithemedarkerdir)/xfwm4 && \
+		cp -R assets-dark/*.xpm $(ithemedarkerdir)/xfwm4 && \
 		cp themerc-dark $(ithemedarkerdir)/xfwm4/themerc
 endif # ENABLE_DARKER
 
@@ -287,7 +287,7 @@ if ENABLE_DARK
 	$(MKDIR_P) $(ithemedarkdir)/xfwm4
 
 	cd $(srcdir)/xfwm4 && \
-		cp -R assets-dark/*.png $(ithemedarkdir)/xfwm4 && \
+		cp -R assets-dark/*.xpm $(ithemedarkdir)/xfwm4 && \
 		cp themerc-dark $(ithemedarkdir)/xfwm4/themerc
 endif # ENABLE_DARK
 
