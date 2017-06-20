@@ -1,0 +1,23 @@
+/* XPM */
+static char *menu_active[] = {
+/* columns rows colors chars-per-pixel */
+"26 16 1 1 ",
+"  c #E7E8EB",
+/* pixels */
+"                          ",
+"                          ",
+"                          ",
+"                          ",
+"                          ",
+"                          ",
+"                          ",
+"                          ",
+"                          ",
+"                          ",
+"                          ",
+"                          ",
+"                          ",
+"                          ",
+"                          ",
+"                          "
+};
