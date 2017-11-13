@@ -1293,7 +1293,6 @@ StScrollBar {
         border: 0px solid #5294e2; }
         .panel-bottom .panel-launcher:hover, .panel-bottom
         .launcher:hover {
-          margin-bottom: 0;
           border-bottom-width: 1px; }
         .panel-top .panel-launcher:hover, .panel-top
         .launcher:hover {
@@ -1311,15 +1310,8 @@ StScrollBar {
           margin-bottom: 0; }
         .panel-top .panel-launcher, .panel-top
         .launcher {
-          margin-top: 0; }
-        .panel-left .panel-launcher, .panel-left
-        .launcher {
-          margin-left: 0;
-          padding-left: 0; }
-        .panel-right .panel-launcher, .panel-right
-        .launcher {
-          margin-right: 0;
-          padding-right: 0; }
+          margin-top: 0;
+          padding-top: 0 }
 
 #overview-corner {
   background-image: url("common-assets/misc/overview.png"); }
