@@ -1305,6 +1305,13 @@ StScrollBar {
     .launcher:hover {
       border-right-width: 1px;
       padding-right: 0; }
+  .panel-bottom .panel-launcher, .panel-bottom
+  .launcher {
+    margin-bottom: 0; }
+  .panel-top .panel-launcher, .panel-top
+  .launcher {
+    margin-top: 0;
+    padding-top: 0; }
 
 #overview-corner {
   background-image: url("common-assets/misc/overview.png"); }
