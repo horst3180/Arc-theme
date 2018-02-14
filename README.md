@@ -43,7 +43,7 @@ A non-transparent version of the theme is available here: [Arc Solid OBS repo](h
 
 ### Manual Installation
 
-To build the theme the follwing packages are required 
+To build the theme the following packages are required 
 * `autoconf`
 * `automake`
 * `pkg-config` or `pkgconfig` for Fedora
