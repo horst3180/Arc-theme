@@ -1,40 +1,22 @@
 {
    "description": "Arc-Dark theme for Chrome/Chromium",
-   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC6RY/VX2xN/FFEQQwi4sSHGaMxF6cARCTsKKxmPhbics9qDIkZxxBqeM4TUhHDhgsZrxZsXAplyKnIjTEIdw96XDK34uF5cqLOG5vzFRIOAdFfCyC9HNupQGg3Vd8PKSVmLZz/2Xsu5zmvx+zz3VIDtNK+HaVktMhJnO9utBougQIDAQAB",
    "manifest_version": 2,
    "name": "Arc Dark",
    "theme": {
       "colors": {
          "bookmark_text": [ 238, 238, 238 ],
-         "button_background": [ 59, 66, 80, 1 ],
          "frame": [ 47, 52, 63 ],
-         "frame_inactive": [ 47, 52, 63 ],
+         "frame_inactive": [ 37, 42, 50 ],
          "frame_incognito": [ 47, 52, 63 ],
-         "frame_incognito_inactive": [ 47, 52, 63],
+         "frame_incognito_inactive": [ 37, 42, 50 ],
          "ntp_background": [ 64, 69, 82 ],
-         "ntp_text": [ 238, 238, 238 ],
-         "tab_background_text": [ 36, 36, 36 ],
+         "tab_background_text": [ 190, 190, 190 ],
          "tab_text": [ 238, 238, 238 ],
          "toolbar": [ 47, 52, 63 ]
       },
-      "images": {
-         "theme_frame": "images/theme_frame.png",
-         "theme_frame_inactive": "images/theme_frame.png",
-         "theme_tab_background": "images/theme_tab_background.png",
-         "theme_toolbar": "images/theme_toolbar.png"
-      },
-      "properties": {
-         "ntp_background_alignment": "bottom",
-         "ntp_background_repeat": "no-repeat"
-      },
       "tints": {
-         "background_tab": [ -1, 0.5, 0.85 ],
-         "buttons": [ 0, 0, 0.81 ],
-         "frame": [ -1, -1, -1 ],
-         "frame_inactive": [ -1, -1, -1 ],
-         "frame_incognito": [ -1, 0.2, 0.35 ],
-         "frame_incognito_inactive": [ -1, 0.3, 0.6 ]
+         "background_tab": [ -1, -1, 0.4 ]
       }
    },
-   "version": "1"
+   "version": "1.3"
 }
