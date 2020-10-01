@@ -130,6 +130,19 @@ Now open the Plank preferences window by executing `plank --preferences` from a 
 ### Arc-Dark for Ubuntu Software Center
 The Arc Dark theme for the Ubuntu Software Center by [mervick](https://github.com/mervick) can be installed from [here](https://github.com/mervick/arc-dark-software-center). It solves readability issues with Arc Dark and the Ubuntu Software Center.
 
+## Bugs
+If you find a bug, please report it at https://github.com/horst3180/arc-theme/issues
+
+## License
+Arc is available under the terms of the GPL-3.0. See `COPYING` for details.
+
+## Full Preview
+![A full screenshot of the Arc theme](http://i.imgur.com/tD1OBQ3.png)
+<sub>Screenshot Details: Icons: [Arc](https://github.com/horst3180/arc-icon-theme) | Launcher Icons based on [White Pixel Icons](http://darkdawg.deviantart.com/art/White-Pixel-Icons-252310560) | [Wallpaper](https://pixabay.com/photo-869593/) | Font: Futura Bk bt</sub>
+
+[obs-repo]: http://software.opensuse.org/download.html?project=home%3AHorst3180&package=arc-theme
+[sk-overlay]: https://c.darenet.org/scriptkitties/overlay
+
 ## Troubleshooting
 
 If you use Ubuntu with a newer GTK/GNOME version than the one included by default (i.e Ubuntu 14.04 with GTK 3.14 or Ubuntu 15.04 with GTK 3.16, etc.) the prebuilt packages won't work properly and the theme has to be installed manually as described above.
