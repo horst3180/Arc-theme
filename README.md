@@ -51,7 +51,19 @@ To build the theme the follwing packages are required
 * `git` to clone the source directory
 
 **Note:** For distributions which don't ship separate development packages, just the GTK 3 package is needed instead of the `-dev` packages.
+##### Arc
 
+![A screenshot of the Arc theme](http://i.imgur.com/Ph5ObOa.png)
+
+##### Arc-Darker
+
+![A screenshot of the Arc-Darker theme](http://i.imgur.com/NC6dqyl.png)
+
+##### Arc-Dark
+
+![A screenshot of the Arc-Dark theme](http://i.imgur.com/5AGlCnA.png)
+
+## Installation
 For the theme to function properly, install the following
 * GNOME Shell 3.14 - 3.24, GTK 3.14 - 3.22
 * The `gnome-themes-standard` package
